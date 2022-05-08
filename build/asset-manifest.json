@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/github-page/static/css/main.073c9b0a.css",
+    "main.js": "/github-page/static/js/main.c8d7c276.js",
+    "static/js/787.9b443e25.chunk.js": "/github-page/static/js/787.9b443e25.chunk.js",
+    "static/media/tennis4you.mp4": "/github-page/static/media/tennis4you.df076faf7b309eceb6d6.mp4",
+    "index.html": "/github-page/index.html",
+    "main.073c9b0a.css.map": "/github-page/static/css/main.073c9b0a.css.map",
+    "main.c8d7c276.js.map": "/github-page/static/js/main.c8d7c276.js.map",
+    "787.9b443e25.chunk.js.map": "/github-page/static/js/787.9b443e25.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.c8d7c276.js"
+  ]
+}
