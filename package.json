@@ -1,7 +1,7 @@
 {
   "name": "github-page",
   "version": "0.1.0",
-  "homepage": "github-page/",
+  "homepage":"https://allefrodrigo.github.io/tennis4you/",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.9.0",
