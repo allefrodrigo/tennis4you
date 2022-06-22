@@ -14,9 +14,10 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import styled from '@emotion/styled'
 
-
-
+const Fonte = styled.section`
+`
 const tiers = [
   {
     title: 'Iniciante',
@@ -84,7 +85,7 @@ const footers = [
 function PricingContent() {
   return (
     <React.Fragment>
-      <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+      <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none'  } }} />
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -96,10 +97,12 @@ function PricingContent() {
           <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
             Tenis4You
           </Typography>
+          
           <nav>
+            
             <Link
               variant="button"
-              color="text.primary"
+              color="#008337"
               href="#"
               sx={{ my: 1, mx: 1.5 }}
             >
@@ -107,7 +110,7 @@ function PricingContent() {
             </Link>
             <Link
               variant="button"
-              color="text.primary"
+              color="#008337"
               href="#"
               sx={{ my: 1, mx: 1.5 }}
             >
@@ -115,7 +118,7 @@ function PricingContent() {
             </Link>
             <Link
               variant="button"
-              color="text.primary"
+              color="#008337"
               href="#"
               sx={{ my: 1, mx: 1.5 }}
             >
@@ -123,16 +126,16 @@ function PricingContent() {
             </Link>
             <Link
               variant="button"
-              color="text.primary"
+              color="#008337"
               href="#"
               sx={{ my: 1, mx: 1.5 }}
             >
               Faça seu agendamento
             </Link>
           </nav>
-          <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+          {/* <Button href="#" variant="contained" sx={{ my: 1, mx: 1.5 }}>
             Login
-          </Button>
+          </Button> */}
         </Toolbar>
       </AppBar>
 

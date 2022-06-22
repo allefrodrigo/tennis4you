@@ -19,10 +19,7 @@ export default function Video() {
       <main>
         {/* Hero unit */}
       
-        
-        <Container maxWidth='xl'>
-          {/* End hero unit */}
-          <video autoPlay loop muted
+        <video autoPlay loop muted
         style={{
           width: '100%',
           height: '100%',
@@ -32,9 +29,12 @@ export default function Video() {
         >
           <source src={Tennis4YouVideo} type="video/mp4"></source>
         </video>
+        {/* <Container maxWidth='xl'>
+      
 
 
-        </Container>
+
+        </Container> */}
       </main>
    
       {/* End footer */}

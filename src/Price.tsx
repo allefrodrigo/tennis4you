@@ -15,6 +15,14 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
+import styled from '@emotion/styled'
+
+const Section = styled.section`
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 
 const tiers = [
@@ -100,6 +108,9 @@ function PricingContent() {
         >
           Conheça nossos planos
         </Typography>
+      <Section>
+
+    
       
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
@@ -115,7 +126,7 @@ function PricingContent() {
                 <CardHeader
                   titleTypographyProps={{ align: 'center' }}
                  sx={{
-                    backgroundColor: tier.title === 'Iniciante' ? 'black' : tier.title === 'Profissional' ? '#4DAF69' : '#E1DB51'
+                    backgroundColor: tier.title === 'Iniciante' ? 'black' : tier.title === 'Profissional' ? '#4DAF69' : '#f5bb00'
         
                   }}
                 />
@@ -163,6 +174,8 @@ function PricingContent() {
             </Grid>
           ))}
         </Grid>
+        </Section>
+
       </Container>
       {/* Footer */}
   

@@ -14,8 +14,38 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import styled from '@emotion/styled'
+import AboutImage from '../src/images/about.jpeg'
+import tenis4you from '../src/images/tenis4you.png'
 
 
+const Img = styled('img')({
+  margin: 'auto',
+  display: 'block',
+  maxWidth: '100%',
+  maxHeight: '100%',
+});
+const Section = styled.section`
+  background: #008337;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+
+const Section3 = styled.section`
+background: #008337;
+padding: 0 1rem 1rem 1rem;
+
+`
+
+const Section2 = styled.section`
+    position: absolute;
+    width: 50%;
+    padding: 0 1rem 1rem 1rem;
+    background-color: #FF3366;
+`
 
 const tiers = [
   {
@@ -81,17 +111,18 @@ const footers = [
   },
 ];
 
-function PricingContent() {
+function CallAbout() {
   return (
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
       <CssBaseline />
       {/* Hero unit */}
-      <Container disableGutters maxWidth="lg" component="main" sx={{ pt: 8, pb: 6 }}>
+      <Container disableGutters maxWidth="lg" component="main" sx={{ py: 4 }}>
         <Typography
           component="h1"
           variant="h2"
           fontSize={32}
+          fontWeight={400}
           align="center"
           color="#008337"
           gutterBottom
@@ -106,12 +137,45 @@ function PricingContent() {
           color="#text.primary"
           gutterBottom
         >
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          Diz-me e eu esqueço-me, mostra-me e eu talvez me lembre, faz-me sentir e jamais me esquecerei
         </Typography>
+
    
       </Container>
-      {/* End hero unit */}
+
+      {/* <div className="row">
+  <div className='column'>
+  </div>
+  <div className='column'>
+  <div>
+      Com mais de 20 anos de experiência na área do ensino dos desportos de raquetas (Ténis e Padel), José Galante e Pedro Ferreira resolveram abraçar um projecto a dois que tivesse o seu próprio cunho. Assim, no dia 30 de Outubro de 2008, nascia a empresa Ténis4You. Sediada na Quinta dos Alcoutins, lugar paradisíaco no meio do verde do campo de Golfe do Paço do Lumiar. Com cerca de 160 alunos na Escola, baseamos o nosso ensino num método muito simples, altamente eficaz e com resultados imediatos para quem experimenta pela primeira vez!    
+      </div>
+  </div>
+</div>
+    */}
+
+
+
+
+
+{/* <Section3>
+        <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={0}>
+        <Grid item xs={7}>
+          <Section2>
+          <img src={AboutImage} width="60%" style={{paddingLeft: '10px', }}/>
+
+        </Section2>
+
+        </Grid>
+        <Grid item xs={4}>
+        Com mais de 20 anos de experiência na área do ensino dos desportos de raquetas (Ténis e Padel), José Galante e Pedro Ferreira resolveram abraçar um projecto a dois que tivesse o seu próprio cunho. Assim, no dia 30 de Outubro de 2008, nascia a empresa Ténis4You. Sediada na Quinta dos Alcoutins, lugar paradisíaco no meio do verde do campo de Golfe do Paço do Lumiar. Com cerca de 160 alunos na Escola, baseamos o nosso ensino num método muito simples, altamente eficaz e com resultados imediatos para quem experimenta pela primeira vez!    
+        </Grid>
      
+      </Grid>
+    </Box>
+     
+    </Section3> */}
       {/* Footer */}
   
       {/* End footer */}
@@ -119,5 +183,5 @@ function PricingContent() {
   );
 }
 export default function About() {
-  return <PricingContent />;
+  return <CallAbout />;
 }

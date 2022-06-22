@@ -5,11 +5,15 @@ import { ThemeProvider } from '@mui/material/styles';
 import App from './App';
 import theme from './theme';
 import Album from './Album';
+import Calendars from './Calendars';
+
 import Footer from './Footer';
 import VideoTennis from './Video';
-import Price from './Price';
+import Info from './Info';
 import About from './About';
-
+import Services from './Services'
+import Partners from './Partners'
+import FotosTenisGalery from './FotosTenisGalery'
 
 
 ReactDOM.render(
@@ -19,8 +23,26 @@ ReactDOM.render(
     <App />
     <VideoTennis />
     <About />
-    <Price />
+    <FotosTenisGalery />
+    <Info />
+
+    <div style={{marginTop: 2}}>
+    <Services  />
+    </div>
+    <Info />
+
+
     <Album />
+    <Calendars />
+    <Partners />
+    {/* <About /> */}
+    {/* <Services />
+    <Price />
+
+   
+
+        <Album /> */}
+        
     <Footer />
   </ThemeProvider>,
   document.querySelector('#root'),
