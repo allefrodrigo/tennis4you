@@ -31,7 +31,7 @@ const tiers = [
   {  
     title: 'Eventos diversos',
     price: '0',
-    image: 'https://t3.ftcdn.net/jpg/01/57/41/12/360_F_157411220_oQMOFAsgXicu1QeBMOor86yKK19P5f6j.jpg',
+    image: 'https://i.ibb.co/SttDPQ3/14c735a4-d702-4c54-b451-673690dd8683.jpg',
     desc: 'Aluguer de espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares',
       description: [
      'Sed ut perspiciatis unde',
@@ -46,7 +46,7 @@ const tiers = [
     title: 'Aulas de Ténis',
     subheader: 'Mais popular',
     price: '15',
-    image: 'https://blog.boladetenisdelivery.com/wp-content/uploads/2021/07/tennis-court-1081845_1280.jpg',
+    image: 'https://i.ibb.co/qsBrZ02/f8392ef2-7f39-453e-9a6c-fabfff842be6.jpg',
     desc: 'No clube Tenis4You temos programas intensivos para um melhor desenvolvimento, um reforço na evolução, além de cursos de treinadores e arbitragem.',
     description: [
       'Sed ut perspiciatis unde',
@@ -60,7 +60,7 @@ const tiers = [
   {
     title: 'Campos de ténis',
     price: '30',
-    image: 'https://blogs.gcc.edu/insider/wp-content/uploads/sites/3/2016/04/Tennis-Racquet-Picturejpg.jpg',
+    image: 'https://i.ibb.co/cYKS4vZ/bf5cb9ad-db0c-4071-a633-0d3f295441d0.jpg',
     desc: 'O clube Ténis4you conta com 2 campos de relva sintética de última geração, 2 paredes e sede social.',
     description: [
       'Sed ut perspiciatis unde',
