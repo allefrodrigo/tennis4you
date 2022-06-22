@@ -47,7 +47,7 @@ const tiers = [
     subheader: 'Mais popular',
     price: '15',
     image: 'https://blog.boladetenisdelivery.com/wp-content/uploads/2021/07/tennis-court-1081845_1280.jpg',
-    desc: 'No clube Tenis 4 You temos programas intensivos para um melhor desenvolvimento, um reforço na evolução, além de cursos de treinadores e arbitragem.',
+    desc: 'No clube Tenis4You temos programas intensivos para um melhor desenvolvimento, um reforço na evolução, além de cursos de treinadores e arbitragem.',
     description: [
       'Sed ut perspiciatis unde',
      'omnis iste natus error sit',

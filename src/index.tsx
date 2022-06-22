@@ -10,6 +10,8 @@ import Calendars from './Calendars';
 import Footer from './Footer';
 import VideoTennis from './Video';
 import Info from './Info';
+import InfoTwo from './InfoTwo';
+
 import About from './About';
 import Services from './Services'
 import Partners from './Partners'
@@ -29,7 +31,7 @@ ReactDOM.render(
     <div style={{marginTop: 2}}>
     <Services  />
     </div>
-    <Info />
+    <InfoTwo />
 
 
     <Album />

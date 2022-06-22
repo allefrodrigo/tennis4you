@@ -127,7 +127,7 @@ function CallAbout() {
           color="#008337"
           gutterBottom
         >
-          Bem vindo ao Tenis 4 You
+          Bem vindo ao Ténis4You
         </Typography>
         <Typography
           component="h2"
