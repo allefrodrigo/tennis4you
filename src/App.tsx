@@ -1,147 +1,126 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
 import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import styled from '@emotion/styled'
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
 
-const Fonte = styled.section`
-`
-const tiers = [
-  {
-    title: 'Iniciante',
-    price: '0',
-    description: [
-     'Sed ut perspiciatis unde',
-     'omnis iste natus error sit',
-     'voluptatem accusantium',
-     'doloremque laudantium'
-    ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Profissional',
-    subheader: 'Mais popular',
-    price: '15',
-    description: [
-      'Sed ut perspiciatis unde',
-     'omnis iste natus error sit',
-     'voluptatem accusantium',
-     'doloremque laudantium'
-    ],
-    buttonText: 'Agende agora!',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Empresarial',
-    price: '30',
-    description: [
-      'Sed ut perspiciatis unde',
-      'omnis iste natus error sit',
-      'voluptatem accusantium',
-      'doloremque laudantium'
-    ],
-    buttonText: 'Contact us',
-    buttonVariant: 'contained',
-  },
-];
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
-    ],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
+const pages = ['Serviços', 'Sobre nós', 'Agende'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function PricingContent() {
+const ResponsiveAppBar = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+
+ 
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
-    <React.Fragment>
-      <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none'  } }} />
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        color="default"
-        elevation={0}
-        sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
-      >
-        <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Tenis4You
+    <AppBar position="fixed">
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            tenis4you
           </Typography>
-          
-          <nav>
-            
-            <Link
-              variant="button"
-              color="#008337"
-              href="#"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              Home
-            </Link>
-            <Link
-              variant="button"
-              color="#008337"
-              href="#"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              Sobre nós
-            </Link>
-            <Link
-              variant="button"
-              color="#008337"
-              href="#"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              Nossos serviços
-            </Link>
-            <Link
-              variant="button"
-              color="#008337"
-              href="#"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              Faça seu agendamento
-            </Link>
-          </nav>
-          {/* <Button href="#" variant="contained" sx={{ my: 1, mx: 1.5 }}>
-            Login
-          </Button> */}
-        </Toolbar>
-      </AppBar>
 
-    </React.Fragment>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            tenis4you
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
-}
-export default function App() {
-  return <PricingContent />;
-}
+};
+export default ResponsiveAppBar;

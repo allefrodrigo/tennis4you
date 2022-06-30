@@ -13,8 +13,11 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import tenis4you from '../src/images/tenis4you.png'
-
+import InstagramIcon from '@mui/icons-material/Instagram';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import FacebookIcon from '@mui/icons-material/Facebook';
 const footers = [
  
   {
@@ -89,17 +92,21 @@ export default function Footer() {
               <Typography variant="h6" color="text.primary" gutterBottom>
                 Redes sociais
               </Typography>
-              <ul>
-                <li><Link href="#" variant="subtitle1" color="text.secondary">
-                      Instagram
-                    </Link>
-                    </li>
-                    <li><Link href="#" variant="subtitle1" color="text.secondary">
-                      Youtube
-                    </Link>
-                </li>
-                    
-              </ul>
+                <Link href="https://www.instagram.com" variant="subtitle1" color="text.secondary">
+                <IconButton aria-label="share">
+          <InstagramIcon />
+              </IconButton>             
+              </Link>
+              <Link href="https://www.facebook.com" variant="subtitle1" color="text.secondary">
+                <IconButton aria-label="share">
+          <FacebookIcon />
+              </IconButton>             
+              </Link>
+              <Link href="https://www.youtube.com" variant="subtitle1" color="text.secondary">
+                <IconButton aria-label="share">
+          <YouTubeIcon />
+              </IconButton>             
+              </Link>
             </Grid>  
         </Grid>
       </Container>

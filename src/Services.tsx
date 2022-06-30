@@ -117,7 +117,7 @@ Missão, Visão e Valores
               md={4}
             >
       
-      <Card >
+      <Card sx={{ minHeight: 180 }}>
       <CardContent sx={{ alignItems: 'center'}}>
         {
           tier.title === 'Nossos valores' ? (<Favorite fontSize="large"></Favorite>) : tier.title === 'Nossa missão' ? (<EmojiFlagsIcon fontSize="large"></EmojiFlagsIcon>) : tier.title === 'Professores qualificados' ?  (<WorkspacePremiumIcon fontSize="large"></WorkspacePremiumIcon>) : (<VisibilityTwoToneIcon fontSize="large"></VisibilityTwoToneIcon>)

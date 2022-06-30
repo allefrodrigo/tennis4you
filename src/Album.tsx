@@ -17,6 +17,16 @@ import styled from '@emotion/styled'
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/CalendarMonth';
 import SendIcon from '@mui/icons-material/Send';
+import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
+import DeleteIcon2 from '@mui/icons-material/Delete';
+import axios from "axios";
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 const Section = styled.section`
   background: #008337;
@@ -25,6 +35,19 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
 `
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 4,
+};
+
+
+const baseURL = "https://tennis4you-heroku.herokuapp.com/contacts";
 
 
 const tiers = [
@@ -79,6 +102,34 @@ const cards = [1, 2, 3];
 const theme = createTheme();
 
 export default function Album() {
+  const [open, setOpen] = React.useState(false);
+  const [post, setPost] = React.useState(null);
+  const [value, setValue] = React.useState<Date | null>(new Date());
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
+
+  React.useEffect(() => {
+    axios.get(`${baseURL}`).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  function createPost() {
+    axios
+      .post(baseURL, {
+        email: "Hello World!",
+        name: "This is a new post.",
+        tipo: 66645456,
+        data: '10/02/2032'
+      })
+      .then((response) => {
+        setPost(response.data);
+      });
+  }
+
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -87,16 +138,16 @@ export default function Album() {
       
         <Section>
 
-        <Container sx={{ py: 4 }} fixed>
+        <Container sx={{ py: 4 }} maxWidth="lg">
           {/* End hero unit */}
           <Typography
-          component="h1"
-          variant="h2"
-          fontSize={32}
-          fontWeight={400}
-          align="center"
-          color="#FFFFFF"
-          gutterBottom
+         component="h1"
+         variant="h2"
+         fontSize={32}
+         fontWeight={400}
+         align="center"
+         color="#FFFFFF"
+         gutterBottom
         >
 Garanta sua reserva
         </Typography>
@@ -112,7 +163,7 @@ Garanta sua reserva
                  {/* <Typography gutterBottom variant="h5" component="div">
             {tier.title}
           </Typography> */}
- <Card sx={{ maxWidth: 345 }}>
+ <Card sx={{ minHeight: 360 }}>
 
       <CardActionArea>
         <CardMedia
@@ -129,9 +180,9 @@ Garanta sua reserva
           <Typography variant="body2" color="text.secondary">
             {tier.desc}
           </Typography>
-          <Button style={{marginTop: 10}}variant="contained" color="success" startIcon={<DeleteIcon />}>
+          <Button onClick={handleOpen} style={{marginTop: 10}}variant="contained" color="success" startIcon={<DeleteIcon />}>
         Faça seu agendamento
-      </Button>
+        </Button>
         </CardContent>
       </CardActionArea>
     </Card>
@@ -142,6 +193,59 @@ Garanta sua reserva
         </Container>
         </Section>
       </main>
+      <div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        
+        <Box sx={style}>
+          
+        <Box
+      sx={{
+        width: 500,
+        maxWidth: '100%',
+      }}
+    >
+          <Typography gutterBottom variant="h5" component="div">
+            Formulário de reserva
+          </Typography>
+      <TextField fullWidth label="Email" id="fullWidth"  margin="normal" />
+      <TextField fullWidth label="Nome" id="fullWidth"  margin="normal" />
+      <TextField fullWidth label="Telefone" id="fullWidth"  margin="normal" />
+      <TextField
+      margin="normal"
+      fullWidth
+        id="date"
+        label="Data da reserva"
+        type="date"
+        defaultValue="2017-05-24"
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+   
+
+
+      </Box>
+      <Stack direction="row" spacing={1} justifyContent="flex-end">
+
+      <Button variant="outlined" startIcon={<DeleteIcon2 />}>
+      Limpar
+      </Button>
+      <Button onClick={createPost} color="success" variant="contained" endIcon={<SendIcon />}>
+      Enviar
+      </Button>
+      </Stack>
+
+      {/* <TextField fullWidth label="fullWidth" id="fullWidth"  margin="normal" /> */}
+      
+
+        </Box>
+      </Modal>
+    </div>
    
       {/* End footer */}
     </ThemeProvider>

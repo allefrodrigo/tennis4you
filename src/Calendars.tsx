@@ -100,7 +100,7 @@ export default function Calendars() {
                  <Typography textAlign={'center'} gutterBottom variant="h5" component="div">
             Reservas para eventos
           </Typography>
- <Card sx={{ maxWidth: 345 }}>
+ <Card >
 
       <Calendar />
     </Card>
@@ -113,7 +113,7 @@ export default function Calendars() {
                  <Typography textAlign={'center'} gutterBottom variant="h5" component="div">
             Reservas para aulas
           </Typography>
- <Card sx={{ maxWidth: 345 }}>
+ <Card >
 
       <Calendar />
     </Card>
@@ -126,7 +126,7 @@ export default function Calendars() {
                  <Typography textAlign={'center'} gutterBottom variant="h5" component="div">
             Reservas de campos
           </Typography>
- <Card sx={{ maxWidth: 345 }}>
+ <Card >
 
       <Calendar />
     </Card>
