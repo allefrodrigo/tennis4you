@@ -7,6 +7,7 @@ import theme from './theme';
 import Album from './Album';
 import Calendars from './Calendars';
 import NewCalendar from './NewCalendar';
+import Teste from './TesteTenisGalery';
 
 import Footer from './Footer';
 import VideoTennis from './Video';
@@ -43,7 +44,8 @@ root.render(
           
           
           <About />
-          <FotosTenisGalery />
+          <Teste />
+          {/* <FotosTenisGalery /> */}
           <Info />   
           <div style={{marginTop: 2}}>
     <Services  />
@@ -64,6 +66,14 @@ root.render(
     <div>
           <About />
           <Contacts />
+
+    </div>
+
+        } />
+
+<Route path="teste" element={
+    <div>
+          {/* <Teste /> */}
 
     </div>
 

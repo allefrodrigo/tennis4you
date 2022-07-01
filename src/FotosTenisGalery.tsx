@@ -87,8 +87,7 @@ function CallAbout() {
   return (
     <React.Fragment>
   <Gallery photos={photos} />
-  
-    </React.Fragment>
+      </React.Fragment>
   );
 }
 export default function FotoTenisGalery() {
