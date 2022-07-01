@@ -112,12 +112,42 @@ function CallAbout() {
         </Typography>
 
         <Section> 
-          <img src={xnauto} width="30%"/>
-          <img src={dunlop} width="30%"/>
-           <img src={solinco} width="30%"/>
+        <Box
+        component="img"
+        sx={{
+          width: '30%',
+          filter: `grayscale(100%)`,
+          color: 'black', '&:hover': {
+            filter: `grayscale(0%)`
+        }}}
+        alt="The house from the offer."
+        src={xnauto}
+      />          <Box
+        component="img"
+        sx={{
+          width: '30%',
+          filter: `grayscale(100%)`,
+          color: 'black', '&:hover': {
+            filter: `grayscale(0%)`
+        }}}
+        alt="The house from the offer."
+        src={dunlop}
+      />
+           <Box
+        component="img"
+        sx={{
+          width: '30%',
+          filter: `grayscale(100%)`,
+          color: 'black', '&:hover': {
+            filter: `grayscale(0%)`
+        }}}
+        alt="The house from the offer."
+        src={solinco}
+      />
         </Section>
-
      
+
+ 
 
 {/* <MudarCor>      <img src={xnauto} width="30%"></img>
 </MudarCor>

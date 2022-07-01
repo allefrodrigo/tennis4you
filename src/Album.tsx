@@ -163,7 +163,7 @@ Garanta sua reserva
                  {/* <Typography gutterBottom variant="h5" component="div">
             {tier.title}
           </Typography> */}
- <Card sx={{ minHeight: 360 }}>
+ <Card sx={{ minHeight: 310 }}>
 
       <CardActionArea>
         <CardMedia
@@ -180,12 +180,21 @@ Garanta sua reserva
           <Typography variant="body2" color="text.secondary">
             {tier.desc}
           </Typography>
-          <Button onClick={handleOpen} style={{marginTop: 10}}variant="contained" color="success" startIcon={<DeleteIcon />}>
+       
+        </CardContent>
+        
+      </CardActionArea>
+      
+   
+    
+
+
+
+    </Card>
+    <Button onClick={handleOpen} style={{marginTop: 10}} variant="contained" sx={{ backgroundColor: '#fff', color: 'black', '&:hover': {
+      backgroundColor: '#3F3F3F',color: '#fff'}}} startIcon={<DeleteIcon />}>
         Faça seu agendamento
         </Button>
-        </CardContent>
-      </CardActionArea>
-    </Card>
               </Grid>
             ))}
           </Grid>
