@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import tenis4you from '../src/images/tenis4you.png'
+import tenis4you from '../src/images/tenis4you_color.png'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
@@ -59,7 +59,7 @@ export default function Footer() {
           py: [3, 6],
         }}
       >
-        <Grid container spacing={2} justifyContent="space-evenly">
+        <Grid container spacing={2} justifyContent="center">
 
             <Grid item xs={6} sm={3}>
               <Typography variant="h6" color="text.primary" gutterBottom>
@@ -83,16 +83,7 @@ export default function Footer() {
                     </li>
                     
               </ul>
-            </Grid>   
-            <Grid item xs={6} sm={3}>
-
-                    <img src={tenis4you} width="80%"></img>
-        </Grid>
-            <Grid item xs={6} sm={3}>
-              <Typography variant="h6" color="text.primary" gutterBottom>
-                Redes sociais
-              </Typography>
-                <Link href="https://www.instagram.com" variant="subtitle1" color="text.secondary">
+              <Link href="https://www.instagram.com" variant="subtitle1" color="text.secondary">
                 <IconButton aria-label="share">
           <InstagramIcon />
               </IconButton>             
@@ -107,8 +98,23 @@ export default function Footer() {
           <YouTubeIcon />
               </IconButton>             
               </Link>
-            </Grid>  
-        </Grid>
+            </Grid>   
+
+            <Box
+        component="img"
+        sx={{
+          width: '20%',
+          objectFit: 'contain',
+          filter: `grayscale(100%)`,
+          color: 'black', '&:hover': {
+            filter: `grayscale(0%)`
+        }}}
+        alt="The house from the offer."
+        src={tenis4you}
+      />        </Grid>
+        
+            
+          
       </Container>
       {/* End footer */}
     </ThemeProvider>
