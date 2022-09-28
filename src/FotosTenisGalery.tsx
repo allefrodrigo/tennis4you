@@ -9,8 +9,6 @@ import styled from '@emotion/styled'
 import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
 import { photos } from "./photos";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
 
 /* popout the browser and maximize to see more rows! -> */
 // const BasicRows = () => ;
@@ -88,7 +86,6 @@ const tiers = [
 function CallAbout() {
   return (
     <React.Fragment>
-              <Skeleton count={5} /> 
   <Gallery photos={photos} />
       </React.Fragment>
   );
