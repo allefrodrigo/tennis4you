@@ -81,9 +81,39 @@ export default function Footer() {
                 Lisboa, Portugal
                     </Typography>
                     </li>
+                    <li>
+                  <Typography variant="subtitle1" color="text.secondary">
+                  +351 968 804 083
+                    </Typography>
+                    </li>
                     
               </ul>
-              <Link href="https://www.instagram.com" variant="subtitle1" color="text.secondary">
+
+            </Grid>   
+
+                  
+      
+      
+      <Grid item xs={6} sm={3}>
+              <Typography variant="h6" color="text.primary" gutterBottom>
+                Contacte-nos
+              </Typography>
+              <ul>
+                <li>
+                  <Typography variant="subtitle1" color="text.secondary">
+                email@gmail.com
+                    </Typography>
+                    </li>
+               
+                
+                    <li>
+                  <Typography variant="subtitle1" color="text.secondary">
+                  +351 968 804 083
+                    </Typography>
+                    </li>
+                    
+              </ul>
+                            <Link href="https://www.instagram.com" variant="subtitle1" color="text.secondary">
                 <IconButton aria-label="share">
           <InstagramIcon />
               </IconButton>             
@@ -98,9 +128,8 @@ export default function Footer() {
           <YouTubeIcon />
               </IconButton>             
               </Link>
-            </Grid>   
-
-            <Box
+              </Grid>
+              <Box
         component="img"
         sx={{
           width: '20%',
@@ -111,7 +140,9 @@ export default function Footer() {
         }}}
         alt="The house from the offer."
         src={tenis4you}
-      />        </Grid>
+      />  
+
+      </Grid>
         
             
           

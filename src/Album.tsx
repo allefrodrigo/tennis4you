@@ -62,7 +62,7 @@ const tiers = [
      'voluptatem accusantium',
      'doloremque laudantium'
     ],
-    buttonText: 'Sign up for free',
+    buttonText: 'Faça nos uma ligação',
     buttonVariant: 'contained',
   },
   {
@@ -77,7 +77,7 @@ const tiers = [
      'voluptatem accusantium',
      'doloremque laudantium'
     ],
-    buttonText: 'Agende agora!',
+    buttonText: 'Agende um treinamento',
     buttonVariant: 'contained',
   },
   {
@@ -91,7 +91,7 @@ const tiers = [
       'voluptatem accusantium',
       'doloremque laudantium'
     ],
-    buttonText: 'Contact us',
+    buttonText: 'Contacto Através do Whatsapp',
     buttonVariant: 'contained',
   },
 ];
@@ -149,7 +149,7 @@ export default function Album() {
          color="#FFFFFF"
          gutterBottom
         >
-Garanta sua reserva
+Entre em contacto
         </Typography>
           <Grid container spacing={4}>
             {tiers.map((tier) => (
@@ -193,7 +193,7 @@ Garanta sua reserva
     </Card>
     <Button onClick={handleOpen} style={{marginTop: 10}} variant="contained" sx={{ backgroundColor: '#fff', color: 'black', '&:hover': {
       backgroundColor: '#3F3F3F',color: '#fff'}}} startIcon={<DeleteIcon />}>
-        Faça seu agendamento
+         {tier.buttonText}
         </Button>
               </Grid>
             ))}

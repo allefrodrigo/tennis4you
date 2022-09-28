@@ -55,7 +55,7 @@ root.render(
 
     <Album />
     {/* <Calendars /> */}
-    <NewCalendar></NewCalendar>
+    {/* <NewCalendar></NewCalendar> */}
     <Partners />   
     <Footer />
    

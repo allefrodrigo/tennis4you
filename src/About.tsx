@@ -137,7 +137,7 @@ function CallAbout() {
           color="#text.primary"
           gutterBottom
         >
-          Diz-me e eu esqueço-me, mostra-me e eu talvez me lembre, faz-me sentir e jamais me esquecerei
+          Onde a paixão e a arte de ensinar se unem
         </Typography>
 
    

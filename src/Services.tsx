@@ -38,7 +38,7 @@ const Section = styled.section`
 
 const tiers = [
   {
-    title: 'Nossa missão',
+    title: 'Youtube',
     price: '0',
     image: 'https://blogs.gcc.edu/insider/wp-content/uploads/sites/3/2016/04/Tennis-Racquet-Picturejpg.jpg',
 desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positivo, experiência desportiva única, transformar o ténis em sucesso, alegria e felicidade',
@@ -52,7 +52,7 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     buttonVariant: 'contained',
   },
   {
-    title: 'Nossa visão',
+    title: 'Instagram',
     subheader: 'Mais popular',
     price: '15',
     image: 'https://blog.boladetenisdelivery.com/wp-content/uploads/2021/07/tennis-court-1081845_1280.jpg',
@@ -104,7 +104,7 @@ export default function Services() {
           color="#1a1a1a"
           gutterBottom
         >
-Missão, Visão e Valores
+Acompanhe-nos em nossas redes sociais
         </Typography>
               
         <Grid container spacing={4}>

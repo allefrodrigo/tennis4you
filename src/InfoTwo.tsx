@@ -150,7 +150,7 @@ alignItems="center"
           color="#008337"
           gutterBottom
         >
-          Conheça nossos resultados
+          Conheça nosso restaurante
         </Typography>
 + de 30 anos de experiência, + de 10.000 alunos, + de 50 títulos nacionais, + de 50 jogadores internacionais, A perfeição não é atingível, mas, se perseguirmos a perfeição alcançamos a excelência. A excelência é obtida nos detalhes. Bom não é suficiente. Oferecemos sempre produtos e serviços de qualidade excepcional que adicionam valor a todos os envolvidos a curto, médio e longo prazo num constante e infindável caminho de aperfeiçoamento e inovação. Treinadores credenciados pela Federação Portuguesa de Ténis de Nível-  III. Treinadores com experiência de cargos de selecionadores em Associações Regionais e na Federação Portuguesa de Ténis. 
               </Grid>
