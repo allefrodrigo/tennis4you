@@ -27,6 +27,12 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import whatsapp from '../src/images/whatsapp.png'
+import phone from '../src/images/phone.png'
+import email from '../src/images/email.png'
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import WhatsappIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Section = styled.section`
   background: #008337;
@@ -52,9 +58,9 @@ const baseURL = "https://tennis4you-heroku.herokuapp.com/contacts";
 
 const tiers = [
   {  
-    title: 'Eventos diversos',
+    title: 'Telemóvel',	
     price: '0',
-    image: 'https://i.ibb.co/SttDPQ3/14c735a4-d702-4c54-b451-673690dd8683.jpg',
+    src: phone,
     desc: 'Aluguer de espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares',
       description: [
      'Sed ut perspiciatis unde',
@@ -64,12 +70,13 @@ const tiers = [
     ],
     buttonText: 'Faça nos uma ligação',
     buttonVariant: 'contained',
+    buttoIcon: LocalPhoneIcon,
   },
   {
-    title: 'Aulas de Ténis',
+    title: 'E-mail',
     subheader: 'Mais popular',
     price: '15',
-    image: 'https://i.ibb.co/qsBrZ02/f8392ef2-7f39-453e-9a6c-fabfff842be6.jpg',
+    src: email,
     desc: 'No clube Tenis4You temos programas intensivos para um melhor desenvolvimento, um reforço na evolução, além de cursos de treinadores e arbitragem.',
     description: [
       'Sed ut perspiciatis unde',
@@ -77,13 +84,13 @@ const tiers = [
      'voluptatem accusantium',
      'doloremque laudantium'
     ],
-    buttonText: 'Agende um treinamento',
+    buttonText: 'Envie-nos um e-mail',
     buttonVariant: 'contained',
   },
   {
-    title: 'Campos de ténis',
+    title: 'Whatsapp',
     price: '30',
-    image: 'https://i.ibb.co/cYKS4vZ/bf5cb9ad-db0c-4071-a633-0d3f295441d0.jpg',
+    src: whatsapp,
     desc: 'O clube Ténis4you conta com 2 campos de relva sintética de última geração, 2 paredes e sede social.',
     description: [
       'Sed ut perspiciatis unde',
@@ -169,11 +176,10 @@ Entre em contacto
         <CardMedia
           component="img"
           height="140"
-          image={tier.image}
-          alt="green iguana"
+          src={tier.src}
         />
         <CardContent>
-          Reserve agora
+          Reserve agora pelo
           <Typography gutterBottom variant="h5" component="div">
           {tier.title}
           </Typography>
@@ -192,7 +198,7 @@ Entre em contacto
 
     </Card>
     <Button onClick={handleOpen} style={{marginTop: 10}} variant="contained" sx={{ backgroundColor: '#fff', color: 'black', '&:hover': {
-      backgroundColor: '#3F3F3F',color: '#fff'}}} startIcon={<DeleteIcon />}>
+      backgroundColor: '#3F3F3F',color: '#fff'}}} startIcon={tier.title === 'Telemóvel'?(<LocalPhoneIcon/>): tier.title === 'Whatsapp'? (<WhatsappIcon/>):(<EmailIcon />)}>
          {tier.buttonText}
         </Button>
               </Grid>

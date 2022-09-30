@@ -101,7 +101,7 @@ export default function Footer() {
               <ul>
                 <li>
                   <Typography variant="subtitle1" color="text.secondary">
-                email@gmail.com
+                  tenis4you2008@gmail.com
                     </Typography>
                     </li>
                

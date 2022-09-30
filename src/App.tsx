@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import t4you from '../src/images/tenis4you_white.png'
 
 const pages = ['Quem Somos', 'Serviços'];
 
@@ -29,8 +30,17 @@ const ResponsiveAppBar = () => {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        <Box
+        component="img"
+        sx={{
+          width: '5%',
+          padding: 1,
+        }}
+        alt="The house from the offer."
+        src={t4you}
+      />   
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -46,7 +56,7 @@ const ResponsiveAppBar = () => {
             }}
           >
             tenis4you
-          </Typography>
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton

@@ -19,6 +19,7 @@ import AboutImage from '../src/images/about.jpeg'
 import xnauto from '../src/images/logo_xanauto.png'
 import dunlop from '../src/images/logo_dunlop.png'
 import solinco from '../src/images/logo_solinco.png'
+import siux from '../src/images/siux_logo.png'
 
 
 import { jsx } from '@emotion/react'
@@ -93,6 +94,9 @@ const tiers = [
 
 
 function CallAbout() {
+  const openInNewTab = (url:any) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   return (
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
@@ -115,7 +119,7 @@ function CallAbout() {
         <Box
         component="img"
         sx={{
-          width: '30%',
+          width: '25%',
           filter: `grayscale(100%)`,
           color: 'black', '&:hover': {
             filter: `grayscale(0%)`
@@ -125,24 +129,40 @@ function CallAbout() {
       />          <Box
         component="img"
         sx={{
-          width: '30%',
+          width: '25%',
           filter: `grayscale(100%)`,
           color: 'black', '&:hover': {
             filter: `grayscale(0%)`
         }}}
         alt="The house from the offer."
         src={dunlop}
+        onClick={() => openInNewTab('https://www.dunlop.eu/pt_pt/consumer.html')}
+
       />
            <Box
         component="img"
         sx={{
-          width: '30%',
+          width: '25%',
           filter: `grayscale(100%)`,
           color: 'black', '&:hover': {
             filter: `grayscale(0%)`
         }}}
         alt="The house from the offer."
         src={solinco}
+        onClick={() => openInNewTab('https://solincoportugal.com/')}
+      />
+           <Box
+        component="img"
+        sx={{
+          width: '25%',
+          filter: `grayscale(100%)`,
+          color: 'black', '&:hover': {
+            filter: `grayscale(0%)`
+        }}}
+        alt="The house from the offer."
+        src={siux}
+        onClick={() => openInNewTab('https://www.siuxpadel.com/en/')}
+
       />
         </Section>
      

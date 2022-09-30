@@ -12,12 +12,19 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { ThreeDRotation } from '@mui/icons-material';
+import { Instagram, ThreeDRotation } from '@mui/icons-material';
 import Favorite from '@mui/icons-material/Favorite';
 import { Button, CardActionArea, CardActions } from '@mui/material'
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import social1 from '../src/images/social_1.jpeg'
+import social2 from '../src/images/social_2.jpg'
+import social3 from '../src/images/social_3.jpg'
+
 import styled from '@emotion/styled'
 const bull = (
   <Box
@@ -40,7 +47,7 @@ const tiers = [
   {
     title: 'Youtube',
     price: '0',
-    image: 'https://blogs.gcc.edu/insider/wp-content/uploads/sites/3/2016/04/Tennis-Racquet-Picturejpg.jpg',
+    image: `url(${social1})`,
 desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positivo, experiência desportiva única, transformar o ténis em sucesso, alegria e felicidade',
     description: [
       'Sed ut perspiciatis unde',
@@ -55,7 +62,7 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     title: 'Instagram',
     subheader: 'Mais popular',
     price: '15',
-    image: 'https://blog.boladetenisdelivery.com/wp-content/uploads/2021/07/tennis-court-1081845_1280.jpg',
+    image: `url(${social2})`,
     desc: ' Criar um clube onde todos acreditem que podem aprender a jogar ténis, contribuir para o desenvolvimento do ténis',
     description: [
       'Sed ut perspiciatis unde',
@@ -67,10 +74,10 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     buttonVariant: 'contained',
   },
   {
-    title: 'Nossos valores',
+    title: 'Facebook',
     subheader: 'Mais popular',
     price: '15',
-    image: 'https://blog.boladetenisdelivery.com/wp-content/uploads/2021/07/tennis-court-1081845_1280.jpg',
+    image: `url(${social3})`,
     description:       'Treinadores credenciados pela Federação Portuguesa de Ténis de Nível -  III',
     desc: 'Paixão, honestidade, Alegria, Ética, Simplicidade, segurança, educação, higiene, saúde',
     
@@ -107,7 +114,9 @@ export default function Services() {
 Acompanhe-nos em nossas redes sociais
         </Typography>
               
-        <Grid container spacing={4}>
+        <Grid container   spacing={4} 
+
+  >
             {tiers.map((tier) => (
               
               <Grid
@@ -115,23 +124,28 @@ Acompanhe-nos em nossas redes sociais
               key={tier.title}
               xs={12}
               md={4}
+              
             >
       
-      <Card sx={{ minHeight: 180 }}>
-      <CardContent sx={{ alignItems: 'center'}}>
+      <Card sx={{ minHeight: '10vh'  }}>
+      <Box  sx={{backgroundImage: tier.image}} style={{ display:'flex', top: 0, left: 0, right: 0, bottom: 0, justifyContent:'center', textAlign: 'center'}}  >
+
+      <CardContent >
         {
-          tier.title === 'Nossos valores' ? (<Favorite fontSize="large"></Favorite>) : tier.title === 'Nossa missão' ? (<EmojiFlagsIcon fontSize="large"></EmojiFlagsIcon>) : tier.title === 'Professores qualificados' ?  (<WorkspacePremiumIcon fontSize="large"></WorkspacePremiumIcon>) : (<VisibilityTwoToneIcon fontSize="large"></VisibilityTwoToneIcon>)
+          tier.title === 'Youtube' ? (<YouTubeIcon fontSize="large" color="error"></YouTubeIcon>) : tier.title === 'Instagram' ? (<InstagramIcon fontSize="large"></InstagramIcon>) : tier.title === 'Facebook' ?  (<FacebookIcon color='primary' fontSize="large"></FacebookIcon>) : (<FacebookIcon  fontSize="large"></FacebookIcon>)
         }
         
         <Typography variant="h5" fontWeight={500} fontSize={18} component="div">
         {tier.title}
         </Typography>
        
-        <Typography variant="body2">
+        {/* <Typography variant="body2">
         {tier.desc}
           <br />
-        </Typography>
+        </Typography> */}
       </CardContent>
+      </Box>
+
       {/* <CardActions>
         <Button size="small">Learn More</Button>
       </CardActions> */}
