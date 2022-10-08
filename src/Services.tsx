@@ -55,6 +55,7 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
      'voluptatem accusantium',
      'doloremque laudantium'
     ],
+    buttonInfo: 'https://www.youtube.com/channel/UCDyRmdKkBJ53CxL5AD1twuw',
     buttonText: 'Sign up for free',
     buttonVariant: 'contained',
   },
@@ -70,6 +71,7 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
      'voluptatem accusantium',
      'doloremque laudantium'
     ],
+    buttonInfo: 'https://www.instagram.com/tenis4you.alcoutins/',
     buttonText: 'Agende agora!',
     buttonVariant: 'contained',
   },
@@ -80,7 +82,7 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     image: `url(${social3})`,
     description:       'Treinadores credenciados pela Federação Portuguesa de Ténis de Nível -  III',
     desc: 'Paixão, honestidade, Alegria, Ética, Simplicidade, segurança, educação, higiene, saúde',
-    
+    buttonInfo: 'https://www.facebook.com/tenis4you.alcoutins',
     buttonText: 'Agende agora!',
     buttonVariant: 'contained',
   }
@@ -128,6 +130,7 @@ Acompanhe-nos em nossas redes sociais
             >
       
       <Card sx={{ minHeight: '10vh'  }}>
+      <CardActionArea href={tier.buttonInfo}>
       <Box  sx={{backgroundImage: tier.image}} style={{ display:'flex', top: 0, left: 0, right: 0, bottom: 0, justifyContent:'center', textAlign: 'center'}}  >
 
       <CardContent >
@@ -145,6 +148,8 @@ Acompanhe-nos em nossas redes sociais
         </Typography> */}
       </CardContent>
       </Box>
+      </CardActionArea>
+
 
       {/* <CardActions>
         <Button size="small">Learn More</Button>
