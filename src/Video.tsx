@@ -7,7 +7,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Tennis4YouVideo from "../src/media/tennis4you.mp4";
 
 
-
 const cards = [1, 2, 3];
 
 const theme = createTheme();
@@ -18,7 +17,7 @@ export default function Video() {
       <CssBaseline />
       <main>
         {/* Hero unit */}
-      
+       
         <video autoPlay loop muted
         style={{
           width: '100%',

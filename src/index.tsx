@@ -22,9 +22,9 @@ import FotosTenisGalery from './FotosTenisGalery'
 
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
-
 import { createRoot } from 'react-dom/client';
-
+import ReactAudioPlayer from 'react-audio-player';
+const  audioFile = require("../src/media/loopsound2.ogg");
 const element = document.getElementById('root');
 const root = createRoot(element!);
 
@@ -33,6 +33,7 @@ root.render(
     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
     <CssBaseline />
     <App />
+           
           <VideoTennis />
     <BrowserRouter>
 
@@ -41,7 +42,11 @@ root.render(
           
           <div>
 
-          
+<ReactAudioPlayer
+            src={audioFile}
+            autoPlay={true}
+            loop={true}
+            />
           
           <About />
           <Teste />
