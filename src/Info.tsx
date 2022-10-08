@@ -149,9 +149,19 @@ function CallAbout() {
           gutterBottom
         >
           	Nossa equipa
-        </Typography>
+        </Typography >
+        <Typography
+          component="h2"
+          variant="h2"
+          fontSize={20}
+          align="center"
+          color="#text.primary"
+          gutterBottom
+          >
+
 Com mais de 20 anos de experiência na área do ensino dos desportos de raquetas, José Galante e Pedro Ferreira resolveram abraçar um projecto a dois que tivesse o seu próprio cunho. Assim, no dia 30 de Outubro de 2008, nascia a empresa Ténis4You. Sediada na Quinta dos Alcoutins, lugar paradisíaco no meio do verde do campo de Golfe do Paço do Lumiar. Com cerca de 160 alunos na Escola, baseamos o nosso ensino num método muito simples, altamente eficaz e com resultados imediatos para quem experimenta pela primeira vez!
 
+          </Typography>
               </Grid>
 <Grid
               item

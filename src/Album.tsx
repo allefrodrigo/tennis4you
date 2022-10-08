@@ -69,7 +69,7 @@ const tiers = [
      'doloremque laudantium'
     ],
     buttonText: 'Faça nos uma ligação',
-    buttonInfo: 'tel:+1-303-499-7111',
+    buttonInfo: 'tel:+351-968-804-083',
     buttonVariant: 'contained',
     buttoIcon: LocalPhoneIcon,
   },
