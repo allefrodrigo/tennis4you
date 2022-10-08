@@ -17,6 +17,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import styled from '@emotion/styled'
 import AboutImage from '../src/images/about.jpeg'
 import tenis4you from '../src/images/tenis4you_color.png'
+import tenis4you2 from '../src/images/construcao.png'
 
 
 const Img = styled('img')({
@@ -168,7 +169,7 @@ Com mais de 20 anos de experiência na área do ensino dos desportos de raquetas
               xs={12}
               md={4}
             >
-                    <img src={tenis4you} width="80%"></img>
+                    <img src={tenis4you2} width="80%"></img>
               </Grid>
               {/* <Grid
               item

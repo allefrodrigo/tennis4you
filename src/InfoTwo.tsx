@@ -17,6 +17,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import styled from '@emotion/styled'
 import AboutImage from '../src/images/about.jpeg'
 import tenis4you from '../src/images/two.jpg'
+import tenis4you2 from '../src/images/construcao.png'
 
 
 const Img = styled('img')({
@@ -158,7 +159,7 @@ alignItems="center"
               item
               xs={6}
             >
-                   <Image src={tenis4you}></Image>
+                   <Image src={tenis4you2}></Image>
               </Grid>
          
 
