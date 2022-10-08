@@ -40,7 +40,7 @@ const Image = styled.img`
 `;
 
 const Section3 = styled.section`
-background: #008337;
+background: #004E18;
 padding: 0 1rem 1rem 1rem;
 
 `
@@ -147,7 +147,7 @@ alignItems="center"
           fontSize={32}
           fontWeight={400}
           align="center"
-          color="#008337"
+          color="#004E18"
           gutterBottom
         >
           Conheça nosso restaurante

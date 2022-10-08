@@ -26,7 +26,7 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 const Section = styled.section`
-  background: #008337;
+  background: #004E18;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ const Section = styled.section`
 
 
 const Section3 = styled.section`
-background: #008337;
+background: #004E18;
 padding: 0 1rem 1rem 1rem;
 
 `
@@ -124,7 +124,7 @@ function CallAbout() {
           fontSize={32}
           fontWeight={400}
           align="center"
-          color="#008337"
+          color="#004E18"
           gutterBottom
         >
           Bem vindo ao Ténis4You

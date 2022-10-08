@@ -35,7 +35,7 @@ const Section = styled.section`
 
 
 const Section3 = styled.section`
-background: #008337;
+background: #004E18;
 padding: 0 1rem 1rem 1rem;
 
 `

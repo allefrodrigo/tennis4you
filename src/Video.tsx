@@ -30,8 +30,6 @@ export default function Video() {
           <source src={Tennis4YouVideo} type="video/mp4"></source>
         </video>
         {/* <Container maxWidth='xl'>
-      
-
 
 
         </Container> */}

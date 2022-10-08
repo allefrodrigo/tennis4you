@@ -35,7 +35,7 @@ import WhatsappIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 
 const Section = styled.section`
-  background: #008337;
+  background: #004E18;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -69,6 +69,7 @@ const tiers = [
      'doloremque laudantium'
     ],
     buttonText: 'Faça nos uma ligação',
+    buttonInfo: 'tel:+1-303-499-7111',
     buttonVariant: 'contained',
     buttoIcon: LocalPhoneIcon,
   },
@@ -85,6 +86,7 @@ const tiers = [
      'doloremque laudantium'
     ],
     buttonText: 'Envie-nos um e-mail',
+    buttonInfo: 'mailto:tenis4you2008@gmail.com',
     buttonVariant: 'contained',
   },
   {
@@ -99,6 +101,7 @@ const tiers = [
       'doloremque laudantium'
     ],
     buttonText: 'Contacto Através do Whatsapp',
+    buttonInfo: '',
     buttonVariant: 'contained',
   },
 ];
@@ -115,6 +118,7 @@ export default function Album() {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  
   
 
   React.useEffect(() => {
@@ -197,10 +201,12 @@ Entre em contacto
 
 
     </Card>
-    <Button onClick={handleOpen} style={{marginTop: 10}} variant="contained" sx={{ backgroundColor: '#fff', color: 'black', '&:hover': {
+    <a style={{textDecoration: 'none'}} href={tier.buttonInfo}>
+    <Button style={{marginTop: 10}} variant="contained" sx={{ backgroundColor: '#fff', color: 'black', '&:hover': {
       backgroundColor: '#3F3F3F',color: '#fff'}}} startIcon={tier.title === 'Telemóvel'?(<LocalPhoneIcon/>): tier.title === 'Whatsapp'? (<WhatsappIcon/>):(<EmailIcon />)}>
          {tier.buttonText}
         </Button>
+    </a>
               </Grid>
             ))}
           </Grid>

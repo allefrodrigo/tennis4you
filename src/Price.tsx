@@ -103,7 +103,7 @@ function PricingContent() {
           variant="h2"
           fontSize={32}
           align="center"
-          color="#008337"
+          color="#004E18"
           gutterBottom
         >
           Conheça nossos planos
