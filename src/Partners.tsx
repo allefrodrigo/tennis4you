@@ -126,6 +126,8 @@ function CallAbout() {
         }}}
         alt="The house from the offer."
         src={xnauto}
+        onClick={() => openInNewTab('https://xanauto.pt/')}
+
       />          <Box
         component="img"
         sx={{
