@@ -45,6 +45,7 @@ root.render(
 <ReactAudioPlayer
             src={ require("../src/media/loopsound2.ogg")}
             autoPlay
+            controls
             volume={0.2}
             />
           
