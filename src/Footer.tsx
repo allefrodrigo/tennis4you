@@ -18,6 +18,9 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import ReactAudioPlayer from 'react-audio-player';
+const  audioFile = require("../src/media/loopsound2.ogg");
+
 const footers = [
  
   {
@@ -143,7 +146,11 @@ export default function Footer() {
       />  
 
       </Grid>
-        
+      <ReactAudioPlayer
+            src={audioFile}
+            autoPlay
+            controls
+            />
             
           
       </Container>

@@ -23,8 +23,7 @@ import FotosTenisGalery from './FotosTenisGalery'
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
 import { createRoot } from 'react-dom/client';
-import ReactAudioPlayer from 'react-audio-player';
-const  audioFile = require("../src/media/loopsound2.ogg");
+
 const element = document.getElementById('root');
 const root = createRoot(element!);
 
@@ -42,13 +41,6 @@ root.render(
           
           <div>
 
-<ReactAudioPlayer
-            src={ require("../src/media/loopsound2.ogg")}
-            autoPlay={true}
-            loop={true}
-            volume={0.2}
-            controls={false}
-            />
           
           <About />
           <Teste />
@@ -66,6 +58,7 @@ root.render(
     <Partners />   
     <Footer />
    
+
           </div>
 
           } />
@@ -83,6 +76,7 @@ root.render(
           {/* <Teste /> */}
 
     </div>
+    
 
         } />
 
