@@ -138,7 +138,7 @@ function CallAbout() {
 <Grid
               item
               xs={12}
-              md={4}
+              md={12}
             >
                  <Typography
           component="h1"
@@ -164,32 +164,8 @@ Com mais de 20 anos de experiência na área do ensino dos desportos de raquetas
 
           </Typography>
               </Grid>
-<Grid
-              item
-              xs={12}
-              md={4}
-            >
-                    <img src={tenis4you2} width="80%"></img>
-              </Grid>
-              {/* <Grid
-              item
-              xs={12}
-              md={4}
-            >
-                     <Typography
-          component="h1"
-          variant="h2"
-          fontSize={32}
-          fontWeight={400}
-          align="center"
-          color="#1d1d1d"
-          gutterBottom
-        >
-          Tenis4You
-        </Typography>
-Oferecemos sempre produtos e serviços de qualidade excepcional que adicionam valor a todos os envolvidos a curto, médio e longo prazo num constante e infindável caminho de aperfeiçoamento e inovação. Treinadores credenciados pela Federação Portuguesa de Ténis de Nível-  III. Treinadores com experiência de cargos de selecionadores em Associações Regionais e na Federação Portuguesa de Ténis.   
-              </Grid> */}
 
+  
   </Grid>
 
   
