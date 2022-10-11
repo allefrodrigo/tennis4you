@@ -203,14 +203,11 @@ Conheça nossos treinadores
               md={4}
               
             >
-    <Box onClick={()=>{}}  boxShadow={2} borderRadius={1} sx={{ minHeight: '60vh', backgroundImage: tier.image, backgroundSize: 'cover',   '&:hover': {
+    <Box onClick={()=>{}}  boxShadow={2} borderRadius={1} sx={{  minHeight: '60vh', backgroundImage: tier.image, backgroundSize: 'cover',   '&:hover': {
       transform: 'scale(1.03)', transition: '0.1s all ease-in-out',
         },}} style={{ display:'flex', justifyContent:'center', textAlign: 'center'}}  >
-   
-    <Box  boxShadow={2} borderRadius={1} sx={{ width: '100%', background: '#000000', opacity: 0.1 , '&:hover': {opacity: 0.5}}} >
-    <Box   style={{ display:'flex', position: 'absolute', bottom: '8px', right: '16px'}}  >
-      <Typography sx={{textShadow: '1px 1px 2px black',  }} color={'white'} variant="h5" fontWeight={500} fontSize={40}>{tier.title}</Typography>
-      </Box>
+    <Box  boxShadow={2} borderRadius={1} sx={{ width: '100%', background: '#000000',position: 'relative', opacity: 0.1 , '&:hover': {opacity: 0.5}}} >
+      <Typography sx={{textShadow: '1px 1px 2px black', position: 'absolute', bottom: '8px', left: '16px' }} color={'white'} variant="h5" fontWeight={500} fontSize={40}>{tier.title}</Typography>
       {/* <CardContent > */}
         {/* {
           tier.title === 'Youtube' ? (<YouTubeIcon fontSize="large" color="error"></YouTubeIcon>) : tier.title === 'Instagram' ? (<InstagramIcon fontSize="large"></InstagramIcon>) : tier.title === 'Facebook' ?  (<FacebookIcon color='primary' fontSize="large"></FacebookIcon>) : (<FacebookIcon  fontSize="large"></FacebookIcon>)
