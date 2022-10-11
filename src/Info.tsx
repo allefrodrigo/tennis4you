@@ -18,6 +18,11 @@ import styled from '@emotion/styled'
 import AboutImage from '../src/images/about.jpeg'
 import tenis4you from '../src/images/tenis4you_color.png'
 import tenis4you2 from '../src/images/construcao.png'
+import {  CardActionArea,  } from '@mui/material'
+
+import joao from '../src/media/teachers/joao-galante-img.png'
+import jose from '../src/media/teachers/jose-galante-img.png'
+import pedro from '../src/media/teachers/pedro-ferreira-img.png'
 
 
 const Img = styled('img')({
@@ -35,6 +40,7 @@ const Section = styled.section`
 `
 
 
+
 const Section3 = styled.section`
 background: #004E18;
 padding: 0 1rem 1rem 1rem;
@@ -50,42 +56,47 @@ const Section2 = styled.section`
 
 const tiers = [
   {
-    title: 'Iniciante',
+    title: 'Pedro Ferreira',
     price: '0',
+    image: `url(${pedro})`,
+desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positivo, experiência desportiva única, transformar o ténis em sucesso, alegria e felicidade',
     description: [
-     'Sed ut perspiciatis unde',
+      'Sed ut perspiciatis unde',
      'omnis iste natus error sit',
      'voluptatem accusantium',
      'doloremque laudantium'
     ],
+    buttonInfo: 'https://www.youtube.com/channel/UCDyRmdKkBJ53CxL5AD1twuw',
     buttonText: 'Sign up for free',
     buttonVariant: 'contained',
   },
   {
-    title: 'Profissional',
+    title: 'João Galante',
     subheader: 'Mais popular',
     price: '15',
+    image: `url(${joao})`,
+    desc: ' Criar um clube onde todos acreditem que podem aprender a jogar ténis, contribuir para o desenvolvimento do ténis',
     description: [
       'Sed ut perspiciatis unde',
      'omnis iste natus error sit',
      'voluptatem accusantium',
      'doloremque laudantium'
     ],
+    buttonInfo: 'https://www.instagram.com/tenis4you.alcoutins/',
     buttonText: 'Agende agora!',
     buttonVariant: 'contained',
   },
   {
-    title: 'Empresarial',
-    price: '30',
-    description: [
-      'Sed ut perspiciatis unde',
-      'omnis iste natus error sit',
-      'voluptatem accusantium',
-      'doloremque laudantium'
-    ],
-    buttonText: 'Contact us',
+    title: 'José Galante',
+    subheader: 'Mais popular',
+    price: '15',
+    image: `url(${jose})`,
+    description:       'Treinadores credenciados pela Federação Portuguesa de Ténis de Nível -  III',
+    desc: 'Paixão, honestidade, Alegria, Ética, Simplicidade, segurança, educação, higiene, saúde',
+    buttonInfo: 'https://www.facebook.com/tenis4you.alcoutins',
+    buttonText: 'Agende agora!',
     buttonVariant: 'contained',
-  },
+  }
 ];
 const footers = [
   {
@@ -131,7 +142,7 @@ function CallAbout() {
     */}
   <Section>
 
-<Container sx={{ py: 4 }} maxWidth="lg">
+<Container sx={{ py: 2 }} maxWidth="lg">
   {/* End hero unit */}
       
 <Grid container spacing={4} >
@@ -163,6 +174,72 @@ function CallAbout() {
 Com mais de 20 anos de experiência na área do ensino dos desportos de raquetas, José Galante e Pedro Ferreira resolveram abraçar um projecto a dois que tivesse o seu próprio cunho. Assim, no dia 30 de Outubro de 2008, nascia a empresa Ténis4You. Sediada na Quinta dos Alcoutins, lugar paradisíaco no meio do verde do campo de Golfe do Paço do Lumiar. Com cerca de 160 alunos na Escola, baseamos o nosso ensino num método muito simples, altamente eficaz e com resultados imediatos para quem experimenta pela primeira vez!
 
           </Typography>
+          <Section>
+
+        <Container sx={{ py: 1 }} maxWidth="lg">
+          {/* End hero unit */}
+          <Typography
+   component="h1"
+   variant="h2"
+   fontSize={32}
+   fontWeight={400}
+   align="center"
+   color="#1d1d1d"
+   gutterBottom
+        >
+Conheça nossos treinadores
+        </Typography>
+              
+        <Grid container   spacing={4} 
+
+  >
+            {tiers.map((tier) => (
+              
+              <Grid
+              
+              item
+              key={tier.title}
+              xs={12}
+              md={4}
+              
+            >
+    <Box onClick={()=>{}}  boxShadow={2} borderRadius={1} sx={{ minHeight: '60vh', backgroundImage: tier.image, backgroundSize: 'cover',   '&:hover': {
+      transform: 'scale(1.03)', transition: '0.1s all ease-in-out',
+        },}} style={{ display:'flex', justifyContent:'center', textAlign: 'center'}}  >
+   
+    <Box  boxShadow={2} borderRadius={1} sx={{ width: '100%', background: '#000000', opacity: 0.1 , '&:hover': {opacity: 0.5}}} >
+    <Box   style={{ display:'flex', position: 'absolute', bottom: '8px', right: '16px'}}  >
+      <Typography sx={{textShadow: '1px 1px 2px black',  }} color={'white'} variant="h5" fontWeight={500} fontSize={40}>{tier.title}</Typography>
+      </Box>
+      {/* <CardContent > */}
+        {/* {
+          tier.title === 'Youtube' ? (<YouTubeIcon fontSize="large" color="error"></YouTubeIcon>) : tier.title === 'Instagram' ? (<InstagramIcon fontSize="large"></InstagramIcon>) : tier.title === 'Facebook' ?  (<FacebookIcon color='primary' fontSize="large"></FacebookIcon>) : (<FacebookIcon  fontSize="large"></FacebookIcon>)
+        } */}
+        
+        {/* <Typography variant="h5" fontWeight={500} fontSize={18} component="div">
+        
+        </Typography> */}
+       
+        {/* <Typography variant="body2">
+        {tier.desc}
+          <br />
+        </Typography> */}
+      {/* </CardContent> */}
+      </Box>
+      </Box>
+
+
+
+
+      {/* <CardActions>
+        <Button size="small">Learn More</Button>
+      </CardActions> */}
+              </Grid>
+            ))}
+          </Grid>
+        
+        </Container>
+        </Section>
               </Grid>
 
   

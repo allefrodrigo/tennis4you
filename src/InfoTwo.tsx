@@ -18,6 +18,8 @@ import styled from '@emotion/styled'
 import AboutImage from '../src/images/about.jpeg'
 import tenis4you from '../src/images/two.jpg'
 import tenis4you2 from '../src/images/construcao.png'
+import SlideRestaurante from './SlideRestaurante';
+import ReactPlayer from 'react-player/lazy'
 
 
 const Img = styled('img')({
@@ -132,38 +134,17 @@ function CallAbout() {
   {/* End hero unit */}
       
 <Grid container spacing={1} 
-              columns={16}
+              columns={2}
 
 direction="row"
 justifyContent="center"
 alignItems="center"
 >
-<Grid
-              item
-              xs={10}
-            >
-                 <Typography
-          component="h1"
-          variant="h2"
-          fontSize={32}
-          fontWeight={400}
-          align="center"
-          color="#004E18"
-          gutterBottom
-        >
-          Conheça nosso restaurante
-        </Typography>
-+ de 30 anos de experiência, + de 10.000 alunos, + de 50 títulos nacionais, + de 50 jogadores internacionais, A perfeição não é atingível, mas, se perseguirmos a perfeição alcançamos a excelência. A excelência é obtida nos detalhes. Bom não é suficiente. Oferecemos sempre produtos e serviços de qualidade excepcional que adicionam valor a todos os envolvidos a curto, médio e longo prazo num constante e infindável caminho de aperfeiçoamento e inovação. Treinadores credenciados pela Federação Portuguesa de Ténis de Nível-  III. Treinadores com experiência de cargos de selecionadores em Associações Regionais e na Federação Portuguesa de Ténis. 
-              </Grid>
-<Grid
-              item
-              xs={6}
-            >
-                   <Image src={tenis4you2}></Image>
-              </Grid>
-         
 
-  </Grid>
+{/* <SlideRestaurante /> */}
+{/* <ReactPlayer src={"../src/media/teachers/joaogalante.mp4"} /> */}
+
+</Grid>
 
   
 

@@ -42,45 +42,6 @@ const Section2 = styled.section`
   padding: 30px;
 `
 
-const tiers = [
-  {
-    title: 'Iniciante',
-    price: '0',
-    description: [
-     'Sed ut perspiciatis unde',
-     'omnis iste natus error sit',
-     'voluptatem accusantium',
-     'doloremque laudantium'
-    ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Profissional',
-    subheader: 'Mais popular',
-    price: '15',
-    description: [
-      'Sed ut perspiciatis unde',
-     'omnis iste natus error sit',
-     'voluptatem accusantium',
-     'doloremque laudantium'
-    ],
-    buttonText: 'Agende agora!',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Empresarial',
-    price: '30',
-    description: [
-      'Sed ut perspiciatis unde',
-      'omnis iste natus error sit',
-      'voluptatem accusantium',
-      'doloremque laudantium'
-    ],
-    buttonText: 'Contact us',
-    buttonVariant: 'contained',
-  },
-];
 
 
 function CallAbout() {
