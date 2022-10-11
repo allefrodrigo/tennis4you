@@ -146,12 +146,12 @@ export default function Footer() {
       />  
 
       </Grid>
-      <ReactAudioPlayer
+      {/* <ReactAudioPlayer
             src={audioFile}
             autoPlay
             controls
             />
-            
+             */}
           
       </Container>
       {/* End footer */}
