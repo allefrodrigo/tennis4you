@@ -137,14 +137,15 @@ const footers = [
 ];
 
 const style = {
+  borderRadius: 2,
   padding: 1,
   position: 'absolute' as 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  bgcolor: '#FFFFFF',
-  boxShadow: 24,
   width: '90%',
+  height: 'auto',
+  bgcolor: '#374F00',
 };
 
 
@@ -291,9 +292,9 @@ Nossa equipa
         <Typography id="modal-modal-title" 
                  component="h2"
                  variant="h2"
-                 fontSize={20}
+                 fontSize={30}
                  align="center"
-                 color="#text.primary"
+                 color="#FFFFFF"
                  gutterBottom>
             Conheça {professor.nome}
           </Typography>
@@ -313,6 +314,7 @@ Nossa equipa
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+
         >
             <Typography
           component="h2"
@@ -328,10 +330,10 @@ Nossa equipa
           {professor.description.map((desc:any)=>(
             <List>
             <ListItem>
-              <ListItemText primary={desc} />
+              <Typography > {desc}</Typography>
             </ListItem>
             </List>
-                    ))}
+          ))}
             
         </AccordionDetails>
       </Accordion>
