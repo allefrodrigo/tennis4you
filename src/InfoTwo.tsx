@@ -142,7 +142,7 @@ alignItems="center"
 >
 
 {/* <SlideRestaurante /> */}
-{/* <ReactPlayer src={"../src/media/teachers/joaogalante.mp4"} /> */}
+<ReactPlayer url='https://streamable.com/um4xbn' />
 
 </Grid>
 

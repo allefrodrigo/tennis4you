@@ -19,6 +19,8 @@ import AboutImage from '../src/images/about.jpeg'
 import tenis4you from '../src/images/tenis4you_color.png'
 import tenis4you2 from '../src/images/construcao.png'
 import {  CardActionArea,  } from '@mui/material'
+import Modal from '@mui/material/Modal';
+import ReactPlayer from 'react-player/lazy'
 
 import joao from '../src/media/teachers/joao-galante-img.png'
 import jose from '../src/media/teachers/jose-galante-img.png'
@@ -58,6 +60,7 @@ const tiers = [
   {
     title: 'Pedro Ferreira',
     price: '0',
+    video: 'https://streamable.com/um4xbn',
     image: `url(${pedro})`,
 desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positivo, experiência desportiva única, transformar o ténis em sucesso, alegria e felicidade',
     description: [
@@ -74,6 +77,8 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     title: 'João Galante',
     subheader: 'Mais popular',
     price: '15',
+    video: 'https://streamable.com/zw9d9b',
+
     image: `url(${joao})`,
     desc: ' Criar um clube onde todos acreditem que podem aprender a jogar ténis, contribuir para o desenvolvimento do ténis',
     description: [
@@ -90,6 +95,7 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     title: 'José Galante',
     subheader: 'Mais popular',
     price: '15',
+    video: 'https://streamable.com/0xs79e',
     image: `url(${jose})`,
     description:       'Treinadores credenciados pela Federação Portuguesa de Ténis de Nível -  III',
     desc: 'Paixão, honestidade, Alegria, Ética, Simplicidade, segurança, educação, higiene, saúde',
@@ -123,7 +129,22 @@ const footers = [
   },
 ];
 
+const style = {
+  
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+};
+
+
 function CallAbout() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [professor, setProfessor] = React.useState({nome: '',  video: ''})
   return (
     <React.Fragment>
       <CssBaseline />
@@ -160,7 +181,7 @@ function CallAbout() {
           color="#1d1d1d"
           gutterBottom
         >
-          	Nossa equipa
+          	Ténis4You
         </Typography >
         <Typography
           component="h2"
@@ -182,12 +203,12 @@ Com mais de 20 anos de experiência na área do ensino dos desportos de raquetas
    component="h1"
    variant="h2"
    fontSize={32}
-   fontWeight={400}
-   align="center"
+   fontWeight={300}
+   align="left"
    color="#1d1d1d"
    gutterBottom
         >
-Conheça nossos treinadores
+Nossa equipa
         </Typography>
               
         <Grid container   spacing={4} 
@@ -203,7 +224,16 @@ Conheça nossos treinadores
               md={4}
               
             >
-    <Box onClick={()=>{}}  boxShadow={2} borderRadius={1} sx={{  minHeight: '60vh', backgroundImage: tier.image, backgroundSize: 'cover',   '&:hover': {
+    <Box onClick={()=>{
+      setProfessor((professor)=>({
+      ...professor,
+      nome: tier.title,
+      video: tier.video
+    }))
+        setOpen(!open)
+
+  }
+  }  boxShadow={2} borderRadius={1} sx={{  minHeight: '60vh', backgroundImage: tier.image, backgroundSize: 'cover',   '&:hover': {
       transform: 'scale(1.03)', transition: '0.1s all ease-in-out',
         },}} style={{ display:'flex', justifyContent:'center', textAlign: 'center'}}  >
     <Box  boxShadow={2} borderRadius={1} sx={{ width: '100%', background: '#000000',position: 'relative', opacity: 0.1 , '&:hover': {opacity: 0.5}}} >
@@ -243,7 +273,26 @@ Conheça nossos treinadores
   </Grid>
 
   
+  <Modal
+        open={open}
+        onClose={handleClose}
+      >
+        <Box sx={style}>
+        <ReactPlayer  url={professor.video} />
 
+          <Typography id="modal-modal-title" 
+                 component="h2"
+                 variant="h2"
+                 fontSize={20}
+                 align="center"
+                 color="#text.primary"
+                 gutterBottom>
+            Conheça {professor.nome}
+          </Typography>
+      
+
+        </Box>
+      </Modal>
 </Container>
 </Section>
     </React.Fragment>
