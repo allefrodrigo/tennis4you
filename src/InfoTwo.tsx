@@ -142,7 +142,6 @@ alignItems="center"
 >
 
 {/* <SlideRestaurante /> */}
-<ReactPlayer url='https://streamable.com/um4xbn' />
 
 </Grid>
 

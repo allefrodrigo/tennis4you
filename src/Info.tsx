@@ -18,7 +18,7 @@ import styled from '@emotion/styled'
 import AboutImage from '../src/images/about.jpeg'
 import tenis4you from '../src/images/tenis4you_color.png'
 import tenis4you2 from '../src/images/construcao.png'
-import {  CardActionArea,  } from '@mui/material'
+import {  CardActionArea, List, ListItem, ListItemText,  } from '@mui/material'
 import Modal from '@mui/material/Modal';
 import ReactPlayer from 'react-player/lazy'
 
@@ -26,6 +26,10 @@ import joao from '../src/media/teachers/joao-galante-img.png'
 import jose from '../src/media/teachers/jose-galante-img.png'
 import pedro from '../src/media/teachers/pedro-ferreira-img.png'
 
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -62,12 +66,10 @@ const tiers = [
     price: '0',
     video: 'https://streamable.com/um4xbn',
     image: `url(${pedro})`,
-desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positivo, experiência desportiva única, transformar o ténis em sucesso, alegria e felicidade',
     description: [
-      'Sed ut perspiciatis unde',
-     'omnis iste natus error sit',
-     'voluptatem accusantium',
-     'doloremque laudantium'
+      '1993 a 1995 – Clube Tap Air Portugal.',
+      '1995 a 2008 – Treinador do Centro de Ténis das Olaias.',
+      '2008 a … Founder Partner, CEO e Treinador na Ténis4You.',
     ],
     buttonInfo: 'https://www.youtube.com/channel/UCDyRmdKkBJ53CxL5AD1twuw',
     buttonText: 'Sign up for free',
@@ -80,7 +82,6 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     video: 'https://streamable.com/zw9d9b',
 
     image: `url(${joao})`,
-    desc: ' Criar um clube onde todos acreditem que podem aprender a jogar ténis, contribuir para o desenvolvimento do ténis',
     description: [
       'Sed ut perspiciatis unde',
      'omnis iste natus error sit',
@@ -97,8 +98,14 @@ desc:'Garantir aos nossos frequentadores um ensino num contexto emocional positi
     price: '15',
     video: 'https://streamable.com/0xs79e',
     image: `url(${jose})`,
-    description:       'Treinadores credenciados pela Federação Portuguesa de Ténis de Nível -  III',
-    desc: 'Paixão, honestidade, Alegria, Ética, Simplicidade, segurança, educação, higiene, saúde',
+    description: [
+    '1988 – Treindor CIF/ Centro de Ténis de Monsanto.',
+    '1993 a 1996 – Treinador Clube Escola de Ténis de Leiria, Selecionador Regional da Associação de Ténis de Leiria, Founder Partner e Treinador do Centro Internacional de Ténis de Leiria.',
+    '1996 a 2002 – Diretor Técnico e Treinador do Clube de Ténis de Azeméis, Selecionador Regional da Associação de Ténis de Aveiro, Seleccionador Nacional da Federação Portuguesa de Ténis.',
+    '2000 e 2001 Reconhecido pelo Instituto Nacional do Desporto como Treinador do ano da Associação de Ténis de Aveiro.',
+    '2003 a 2008 – Diretor Técnico e Treinador do Centro de Ténis das Olaias, Selecionador Regional da Associação de Ténis de Lisboa, Seleccionador Nacional da Federação Portuguesa de Ténis.',
+    '2008 a … Founder Partner, CEO e Treinador na Ténis4You.'
+    ],
     buttonInfo: 'https://www.facebook.com/tenis4you.alcoutins',
     buttonText: 'Agende agora!',
     buttonVariant: 'contained',
@@ -130,13 +137,14 @@ const footers = [
 ];
 
 const style = {
-  
+  padding: 1,
   position: 'absolute' as 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
+  bgcolor: '#FFFFFF',
   boxShadow: 24,
+  width: '90%',
 };
 
 
@@ -144,7 +152,8 @@ function CallAbout() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [professor, setProfessor] = React.useState({nome: '',  video: ''})
+  const [professor, setProfessor] = React.useState({nome: '',  video: '', description: ['']})
+  console.log(professor.description)
   return (
     <React.Fragment>
       <CssBaseline />
@@ -228,7 +237,8 @@ Nossa equipa
       setProfessor((professor)=>({
       ...professor,
       nome: tier.title,
-      video: tier.video
+      video: tier.video,
+      description: tier.description
     }))
         setOpen(!open)
 
@@ -278,9 +288,7 @@ Nossa equipa
         onClose={handleClose}
       >
         <Box sx={style}>
-        <ReactPlayer  url={professor.video} />
-
-          <Typography id="modal-modal-title" 
+        <Typography id="modal-modal-title" 
                  component="h2"
                  variant="h2"
                  fontSize={20}
@@ -288,6 +296,45 @@ Nossa equipa
                  color="#text.primary"
                  gutterBottom>
             Conheça {professor.nome}
+          </Typography>
+        <ReactPlayer width='100%' url={professor.video} />
+
+        
+          <Typography id="modal-modal-title" 
+                 component="h2"
+                 variant="h2"
+                 fontSize={20}
+                 align="center"
+                 color="#text.primary"
+                 gutterBottom>
+
+<Accordion sx={{margin: 4}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+            <Typography
+          component="h2"
+          variant="h2"
+          fontSize={20}
+          align="center"
+          color="#text.primary"
+          gutterBottom
+          >Informações sobre {professor.nome}</Typography>
+        </AccordionSummary>
+        <AccordionDetails >
+            
+          {professor.description.map((desc:any)=>(
+            <List>
+            <ListItem>
+              <ListItemText primary={desc} />
+            </ListItem>
+            </List>
+                    ))}
+            
+        </AccordionDetails>
+      </Accordion>
           </Typography>
       
 
