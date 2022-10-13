@@ -141,7 +141,7 @@ justifyContent="center"
 alignItems="center"
 >
 
-{/* <SlideRestaurante /> */}
+<SlideRestaurante />
 
 </Grid>
 
