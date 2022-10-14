@@ -143,9 +143,9 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '90%',
+  width: '60%',
   height: 'auto',
-  bgcolor: '#374F00',
+  bgcolor: '#090909',
 };
 
 
@@ -283,10 +283,11 @@ Nossa equipa
   
   </Grid>
 
-  
   <Modal
         open={open}
         onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
         <Typography id="modal-modal-title" 
