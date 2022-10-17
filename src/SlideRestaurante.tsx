@@ -108,9 +108,8 @@ md={12}
 
 
 */}
-<Grid container spacing={2}>
-  <Grid item xs={8}>
-  
+      <Grid container >
+  <Grid xs={12} sm={8} md={8}>  
     <AliceCarousel
     disableDotsControls
         infinite 
@@ -123,8 +122,9 @@ md={12}
         
     />
   </Grid>
-  <Grid item xs={4}>
-    <Typography     component="h2"
+  <Grid xs={12} sm={8} md={4}>
+    <Typography     
+    component="h2"
           variant="h2"
           fontSize={32}
           align="center"
@@ -154,12 +154,7 @@ md={12}
 
 
   </Grid>
-  {/* <Grid item xs={4}>
-    <Typography>xs=4</Typography>
-  </Grid>
-  <Grid item xs={8}>
-    <Typography>xs=8</Typography>
-  </Grid> */}
+
 </Grid>
 </Container> 
     </React.Fragment>

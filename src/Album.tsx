@@ -174,7 +174,8 @@ Entre em contacto
                  {/* <Typography gutterBottom variant="h5" component="div">
             {tier.title}
           </Typography> */}
- <Card sx={{ minHeight: 310 }}>
+ <Card sx={{ minHeight: 200 }}>
+ <a style={{textDecoration: 'none', color: 'inherit' }} href={tier.buttonInfo}>
 
       <CardActionArea>
         <CardMedia
@@ -187,26 +188,26 @@ Entre em contacto
           <Typography gutterBottom variant="h5" component="div">
           {tier.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          {/* <Typography variant="body2" color="text.secondary">
             {tier.desc}
           </Typography>
-       
+        */}
         </CardContent>
         
       </CardActionArea>
-      
+  </a>
    
     
 
 
 
     </Card>
-    <a style={{textDecoration: 'none'}} href={tier.buttonInfo}>
+    {/* <a style={{textDecoration: 'none'}} href={tier.buttonInfo}>
     <Button style={{marginTop: 10}} variant="contained" sx={{ backgroundColor: '#fff', color: 'black', '&:hover': {
       backgroundColor: '#3F3F3F',color: '#fff'}}} startIcon={tier.title === 'Telemóvel'?(<LocalPhoneIcon/>): tier.title === 'Whatsapp'? (<WhatsappIcon/>):(<EmailIcon />)}>
          {tier.buttonText}
         </Button>
-    </a>
+    </a> */}
               </Grid>
             ))}
           </Grid>
