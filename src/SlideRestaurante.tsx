@@ -33,7 +33,7 @@ const Section5 = styled.section`
 const EachSlide = styled.div`
   object-fit: cover;
   width: 680px;
-  height: 600px;
+  height: 700px;
 `
 
   const handleDragStart = (e:any) => e.preventDefault();
@@ -126,7 +126,7 @@ md={12}
     <Typography     
     component="h2"
           variant="h2"
-          fontSize={32}
+          fontSize={28}
           align="center"
           color="#text.primary"
           gutterBottom

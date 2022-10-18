@@ -10,14 +10,20 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import t4you from '../src/images/tenis4you_white.png'
-import pdadel from '../src/images/padel.png'
+
+import padel from '../src/images/padel.png'
 import tenis from '../src/images/tenis.png'
+import proshop from '../src/images/proshop.png'
+import eventos from '../src/images/eventos.png'
+import aluguel from '../src/images/aluguel.png'
 
 import Modal from '@mui/material/Modal';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+
+
 
 const pages = ['Quem Somos', 'Serviços'];
 const style = {
@@ -31,6 +37,34 @@ const style = {
   height: 'auto',
   bgcolor: '#282828',
 };
+
+const tier = [
+  {
+    title: 'Padel',
+    image: `url(${padel})`,
+    desc: 'Gostaria de aprender o desporto com maior crescimento em Portugal? A nossa equipa proporciona-lhe uma progressão surpreendente! O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto. Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.'
+  },
+  {
+    title: 'Tenis',
+    image: `url(${tenis})`,
+    desc: 'Gostaria de aprender este desporto apaixonante? Ténis4You ensino de excelência! A nossa metodologia foi concebida por uma equipa de profissionais qualificados e com uma vasta experiencia nos diferentes níveis de ténis. Não precisa de qualquer experiencia previa. A nossa equipa criou a combinação perfeita na simplicidade no ensino de forma a acelerar resultados sem queimar etapas para todas as idades e géneros. Para que aprenda depressa e ao seu ritmo com a garantia de um nível de evolução máxima. Garantimos resultados imediatos! Marque já a sua aula experimental Gratuita!'
+  },
+  {
+    title: 'Pro Shop',
+    image: `url(${proshop})`,
+    desc: 'Um spot acolhedor onde os atletas podem descansar e recarregar as energias. Para os visitantes e familiares o Sweet Spot é um lugar único com uma vista deslumbrante e pratos que nos cativam o paladar. Comida caseira com o melhor da cozinha tradicional portuguesa.'
+  },
+  {
+    title: 'Eventos',
+    image: `url(${eventos})`,
+    desc: 'Gostaria de aprender o desporto com maior crescimento em Portugal? A nossa equipa proporciona-lhe uma progressão surpreendente! O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto. Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.'
+  },
+  {
+    title: 'Aluguel',
+    image: `url(${aluguel})`,
+    desc: 'Aluguer de espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares'
+  }
+];
 
 const bull = (
   <Box
@@ -62,12 +96,13 @@ const card = (
           align="center"
           color="#text.primary"
           gutterBottom>
-      Gostaria de aprender o desporto com maior crescimento em Portugal ?
+
+      {/* Gostaria de aprender o desporto com maior crescimento em Portugal ?
 A nossa equipa proporciona-lhe uma progressão surpreendente !!!
 
 O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto.
 Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. 
-Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.
+Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo. */}
 
       </Typography>
       <CardActions>
@@ -80,7 +115,7 @@ Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande comp
 <CardMedia
         component="img"
         sx={{ width: 350 }}
-        image={pdadel}
+        image={padel}
         alt="Live from space album cover"
       />
   </React.Fragment>
@@ -94,8 +129,32 @@ const ResponsiveAppBar = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
-  const handleOpenModal = () => setOpenModal(true);
-  const handleCloseModal = () => setOpenModal(false);
+  const [modalInfo, setModalInfo] = React.useState({nome: '',  imgsource: '', description: ''})
+
+
+  function handleOpenModal(infoModal  : number) {
+    console.log('info',infoModal)
+
+    if (infoModal == 1) {
+      console.log('Tenis')
+      setModalInfo({nome: 'Tenis', imgsource: tenis, description: 'Gostaria de aprender este desporto apaixonante? Ténis4You ensino de excelência! A nossa metodologia foi concebida por uma equipa de profissionais qualificados e com uma vasta experiencia nos diferentes níveis de ténis. Não precisa de qualquer experiencia previa. A nossa equipa criou a combinação perfeita na simplicidade no ensino de forma a acelerar resultados sem queimar etapas para todas as idades e géneros. Para que aprenda depressa e ao seu ritmo com a garantia de um nível de evolução máxima. Garantimos resultados imediatos! Marque já a sua aula experimental Gratuita!'})
+
+    } else if (infoModal == 2) {
+      setModalInfo({nome: 'Padel', imgsource: padel, description: 'Gostaria de aprender o desporto com maior crescimento em Portugal? A nossa equipa proporciona-lhe uma progressão surpreendente! O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto. Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.'})
+    } else if (infoModal == 3) {
+      setModalInfo({nome: 'Pro Shop', imgsource: proshop, description: 'Gostaria de aprender o desporto com maior crescimento em Portugal? A nossa equipa proporciona-lhe uma progressão surpreendente! O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto. Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.'})
+    } else if (infoModal == 4){
+      setModalInfo({nome: 'Eventos', imgsource: eventos, description: 'Na Ténis4You temos espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares'})
+    } else if (infoModal == 5){
+      setModalInfo({nome: 'Aluguel', imgsource: aluguel, description: 'Aluguer de espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares'}) 
+    } else {
+      console.log('Nada')
+    }
+ 
+    setOpenModal(true);
+  
+  };
+    const handleCloseModal = () => setOpenModal(false);
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -185,7 +244,7 @@ const ResponsiveAppBar = () => {
  
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
          
-
+{/* 
               <Button
                 key={'quem-somos'}
                 id="basic-button"
@@ -196,8 +255,8 @@ const ResponsiveAppBar = () => {
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 Quem Somos
-              </Button>
-              <Menu
+              </Button> */}
+              {/* <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -206,8 +265,7 @@ const ResponsiveAppBar = () => {
           'aria-labelledby': 'basic-button',
         }}>
         <MenuItem onClick={handleClose}>Institucional</MenuItem>
-
-      </Menu>
+        </Menu> */}
 
       <Button
                 key={'servicos'}
@@ -228,11 +286,29 @@ const ResponsiveAppBar = () => {
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}>
-        <MenuItem onClick={handleOpenModal}>Ténis</MenuItem>
-        <MenuItem onClick={handleOpenModal}>Padel</MenuItem>
-        <MenuItem onClick={handleClose}>Pró Shop</MenuItem>
-        <MenuItem onClick={handleClose}>Eventos</MenuItem>
-        <MenuItem onClick={handleClose}>Aluguel Quadra</MenuItem>
+        <MenuItem onClick={()=>{
+          handleOpenModal(1)
+        }}>Ténis</MenuItem>
+        
+        <MenuItem onClick={()=>{
+          handleOpenModal(2)
+        }}>Padel</MenuItem>
+
+        <MenuItem onClick={()=>{
+          handleOpenModal(3)
+        }}>Pro Shop</MenuItem>
+
+        <MenuItem onClick={()=>{
+          handleOpenModal(4)
+        }
+        }>Eventos</MenuItem>
+
+      <MenuItem onClick={()=>{
+          handleOpenModal(5)
+        }
+        }>Aluguel</MenuItem>
+
+     
 
       </Menu>
             
@@ -249,44 +325,59 @@ const ResponsiveAppBar = () => {
         open={openModal}
         onClose={handleCloseModal}
       >
-        {/* <Box sx={style}>
-        <Typography id="modal-modal-title" 
-                 component="h2"
-                 variant="h2"
-                 fontSize={30}
-                 align="center"
-                 color="#FFFFFF"
-                 gutterBottom>
-            Pádel
-          </Typography>
 
-        
-          <Typography id="modal-modal-text" 
-                 component="h2"
-                 variant="h2"
-                 fontSize={20}
-                 align="center"
-                 color="#FFFFFF"
-                 gutterBottom>
-
-Gostaria de aprender o desporto com maior crescimento em Portugal ?
-A nossa equipa proporciona-lhe uma progressão surpreendente !!!
-
-O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto.
-Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. 
-Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.
-
-          </Typography>
-          <Button> Entre em contato</Button>
-      
-
-        </Box> */}
         <div>
 
         <Box style={style}>
-      <Card sx={{ display: 'flex' }} variant="outlined">{card}</Card>
+      <Card sx={{ display: 'flex' }} variant="outlined">{
+    <React.Fragment>
+<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+
+<CardContent sx={{   alignItems: 'center', justifyContent: 'center' }}>
+<Box>
+<Typography align="center"     component="h1"
+  variant="h1"
+  fontSize={32}
+  fontWeight={400}
+  color="#1d1d1d"
+  gutterBottom>
+Conheça o {modalInfo.nome}
+</Typography>
+
+<Typography    component="h2"
+  variant="h2"
+  fontSize={20}
+  align="center"
+  color="#text.primary"
+  gutterBottom>
+{modalInfo.description}
+</Typography>
+</Box>
+<CardActions>
+<Button size="small">Marque sua aula experimental gratuita</Button>
+</CardActions>
+
+</CardContent>
+
+
+</Box>
+   <CardMedia
+   component="img"
+   sx={{ width: 350 }}
+   image={modalInfo.imgsource}
+   alt="Live from space album cover"
+ />
+</React.Fragment>
+
+
+
+
+      }
+      
+      </Card>
 
     </Box>
+ 
   
       </div>
       </Modal>
