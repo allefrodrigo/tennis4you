@@ -293,6 +293,61 @@ const ResponsiveAppBar = () => {
           
         </Toolbar>
         <Modal
+        open={openAboutModal}
+        onClose={handleCloseAboutModal}
+      >
+
+        <div>
+
+        <Box style={style}>
+      <Card sx={{ display: 'flex' }} variant="outlined">{
+    <React.Fragment>
+<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+
+<CardContent sx={{   alignItems: 'center', justifyContent: 'center' }}>
+<Box >
+<Typography align="center"     component="h1"
+  variant="h1"
+  fontSize={32}
+  fontWeight={400}
+  color="#1d1d1d"
+  gutterBottom>
+ 🚧  Em breve vídeo Institucional 🚧 
+ </Typography>
+
+<Typography    component="h2"
+  variant="h2"
+  fontSize={20}
+  align="center"
+  color="#text.primary"
+  gutterBottom>
+{modalInfo.description}
+</Typography>
+</Box>
+
+
+</CardContent>
+
+
+</Box>
+
+</React.Fragment>
+
+
+
+
+      }
+      
+      </Card>
+
+    </Box>
+ 
+  
+      </div>
+      </Modal>
+
+
+        <Modal
         open={openModal}
         onClose={handleCloseModal}
       >
