@@ -1,16 +1,17 @@
 import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import restaurante1 from '../src/images/restaurante/restaurante1-size.jpg';
-import restaurante2 from '../src/images/restaurante/restaurante2-size.jpg';
-import restaurante3 from '../src/images/restaurante/restaurante3-size.jpg';
-import restaurante4 from '../src/images/restaurante/restaurante4-size.jpg';
-import restaurante5 from '../src/images/restaurante/restaurante5-size.jpg';
+import restaurante1 from '../src/images/restaurante/restaurante1.jpeg';
+import restaurante2 from '../src/images/restaurante/restaurante2.jpeg';
+import restaurante3 from '../src/images/restaurante/restaurante3.jpeg';
+import restaurante4 from '../src/images/restaurante/restaurante4.jpeg';
+import restaurante5 from '../src/images/restaurante/restaurante5.jpeg';
 import styled from '@emotion/styled'
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
 
 const Section4 = styled.section`
   background: #004E18;
@@ -31,9 +32,14 @@ const Section5 = styled.section`
 `
 
 const EachSlide = styled.div`
-  object-fit: cover;
-  width: 680px;
-  height: 700px;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+ 
+
+
 `
 
   const handleDragStart = (e:any) => e.preventDefault();
@@ -55,7 +61,7 @@ const SlideRestaurante = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container disableGutters maxWidth="lg"  sx={{ py: 1 }}>
+      <Container disableGutters maxWidth="lg" >
         <Typography
           component="h1"
           variant="h2"
@@ -113,7 +119,7 @@ md={12}
     <AliceCarousel
     disableDotsControls
         infinite 
-        autoPlayInterval={3500} 
+        autoPlayInterval={2500} 
         autoPlay
         animationType="fadeout" 
         animationDuration={500}
@@ -122,18 +128,21 @@ md={12}
         
     />
   </Grid>
-  <Grid xs={12} sm={8} md={4}>
+  <Grid xs={12} sm={4} md={4}>
+    <Box style={{flex: 1, alignItems: 'center', textAlign: 'center', justifyContent: 'center'}}>
     <Typography     
+    sx={{padding: 2}}
     component="h2"
           variant="h2"
-          fontSize={28}
+          fontSize={25}
           align="center"
           color="#text.primary"
           gutterBottom
-          >Um spot acolhedor onde os atletas podem descansar e recarregar as energias.
+          >
+          Um spot acolhedor onde os atletas podem descansar e recarregar as energias.
           Para os visitantes e familiares o Sweet Spot é um lugar único com uma vista deslumbrante e pratos que nos cativam o paladar. Comida caseira com o melhor da cozinha tradicional portuguesa.
           </Typography>
-
+          </Box>
           {/* <Typography     component="h3"
           variant="h2"
           fontSize={14}
