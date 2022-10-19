@@ -71,6 +71,17 @@ const tiers = [
       '1995 a 2008 – Treinador do Centro de Ténis das Olaias.',
       '2008 a … Founder Partner, CEO e Treinador na Ténis4You.',
     ],
+    cursos: [
+      'Curso de treinadores de ténis de nível III da Federação Portuguesa de Ténis.',
+'Curso de treinadores de ténis de nível I da Federação Portuguesa de Padel.',
+'Curso de treinador de ténis internacional de nível I e system five da nick bollettieri tennis academy.',
+'Curso de treinador de ténis internacional de nível II do Registo Profissional de Ténis.',
+'Curso de treinadores de ténis European Registry of Tennis Profissional.',
+'Curso de treinadores da United States Professional Tennis Association.',
+'Participação em vários cursos, simpósios, workshops e ações de formação nacionais, ibéricos e internacionais.'
+
+
+    ],
     buttonInfo: 'https://www.youtube.com/channel/UCDyRmdKkBJ53CxL5AD1twuw',
     buttonText: 'Sign up for free',
     buttonVariant: 'contained',
@@ -83,10 +94,12 @@ const tiers = [
 
     image: `url(${joao})`,
     description: [
-      'Sed ut perspiciatis unde',
-     'omnis iste natus error sit',
-     'voluptatem accusantium',
-     'doloremque laudantium'
+      'Integra a equipa desde 2019  - Treinador de Ténis e Padel na Ténis4You - Dá treinos a todas as faixas etárias desde a iniciação ao aperfeiçoamento.',
+     'Organiza atividades de ténis e padel no clube promovendo o lado social do clube.',
+     'Perfeccionista calmo e muito paciente transmite uma base técnica para os alunos desfrutarem ao máximo do ténis e do padel. ',
+    ],
+    cursos: [
+      'Curso de treinadores de ténis de nível I da Federação Portuguesa de Ténis.'
     ],
     buttonInfo: 'https://www.instagram.com/tenis4you.alcoutins/',
     buttonText: 'Agende agora!',
@@ -105,6 +118,15 @@ const tiers = [
     '2000 e 2001 Reconhecido pelo Instituto Nacional do Desporto como Treinador do ano da Associação de Ténis de Aveiro.',
     '2003 a 2008 – Diretor Técnico e Treinador do Centro de Ténis das Olaias, Selecionador Regional da Associação de Ténis de Lisboa, Seleccionador Nacional da Federação Portuguesa de Ténis.',
     '2008 a … Founder Partner, CEO e Treinador na Ténis4You.'
+    ],
+    cursos: [
+'Curso de treinadores de ténis de nível III da Federação Portuguesa de Ténis.',
+'Curso de treinadores de ténis de nível I da Federação Portuguesa de Padel.',
+'Curso de treinador de ténis internacional de nível I e system five da nick bollettieri tennis academy.',
+'Curso de treinador de ténis internacional de nível II do Registo Profissional de Ténis.',
+'Curso de treinadores de ténis European Registry of Tennis Profissional.',
+'Participação em vários cursos, simpósios, workshops e ações de formação nacionais, ibéricos e internacionais.',
+'Curso de Árbitro de Cadeira e Juiz - Árbitro de Ténis da Federação Portuguesa de Ténis.',
     ],
     buttonInfo: 'https://www.facebook.com/tenis4you.alcoutins',
     buttonText: 'Agende agora!',
@@ -153,7 +175,7 @@ function CallAbout() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [professor, setProfessor] = React.useState({nome: '',  video: '', description: ['']})
+  const [professor, setProfessor] = React.useState({nome: '',  video: '', description: [''], cursos: ['']});
   console.log(professor.description)
   return (
     <React.Fragment>
@@ -239,7 +261,8 @@ Nossa equipa
       ...professor,
       nome: tier.title,
       video: tier.video,
-      description: tier.description
+      description: tier.description,
+      cursos: tier.cursos
     }))
         setOpen(!open)
 
@@ -329,6 +352,34 @@ Nossa equipa
         <AccordionDetails >
             
           {professor.description.map((desc:any)=>(
+            <List>
+            <ListItem>
+              <Typography > {desc}</Typography>
+            </ListItem>
+            </List>
+          ))}
+            
+        </AccordionDetails>
+      </Accordion>
+      <Accordion sx={{margin: 4}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+
+        >
+            <Typography
+          component="h2"
+          variant="h2"
+          fontSize={20}
+          align="center"
+          color="#text.primary"
+          gutterBottom
+          >Cursos de {professor.nome}</Typography>
+        </AccordionSummary>
+        <AccordionDetails >
+            
+          {professor.cursos.map((desc:any)=>(
             <List>
             <ListItem>
               <Typography > {desc}</Typography>
