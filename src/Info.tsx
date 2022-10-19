@@ -165,7 +165,13 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '60%',
+  width: {
+    xs: '90%',
+    sm: '80%',
+    md: '80%',
+    lg: '80%',
+    xl: '80%',
+  },
   height: 'auto',
   bgcolor: '#090909',
 };
@@ -333,7 +339,7 @@ Nossa equipa
                  color="#text.primary"
                  gutterBottom>
 
-<Accordion sx={{margin: 4}}>
+<Accordion sx={{margin: 4 }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -350,12 +356,15 @@ Nossa equipa
           >Informações sobre {professor.nome}</Typography>
         </AccordionSummary>
         <AccordionDetails >
-            
+        <List>
+
           {professor.description.map((desc:any)=>(
-          
+            <ListItem>
               <Typography > {desc}</Typography>
-         
+            </ListItem>
           ))}
+                      </List>
+
             
         </AccordionDetails>
       </Accordion>
@@ -376,13 +385,16 @@ Nossa equipa
           >Cursos de {professor.nome}</Typography>
         </AccordionSummary>
         <AccordionDetails >
-            
+
+        <List>
           {professor.cursos.map((desc:any)=>(
-          
+           <ListItem>
               <Typography > {desc}</Typography>
-           
+              </ListItem>
+
           ))}
-            
+          </List>
+
         </AccordionDetails>
       </Accordion>
           </Typography>
