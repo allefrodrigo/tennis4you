@@ -66,71 +66,28 @@ const tier = [
   }
 ];
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
 
-const card = (
-  <React.Fragment>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-
-        <CardContent sx={{   alignItems: 'center', justifyContent: 'center' }}>
-   
-      <Typography align="center"     component="h1"
-          variant="h1"
-          fontSize={32}
-          fontWeight={400}
-          color="#1d1d1d"
-          gutterBottom>
-        Conheça o Padel
-      </Typography>
-
-      <Typography    component="h2"
-          variant="h2"
-          fontSize={20}
-          align="center"
-          color="#text.primary"
-          gutterBottom>
-
-      {/* Gostaria de aprender o desporto com maior crescimento em Portugal ?
-A nossa equipa proporciona-lhe uma progressão surpreendente !!!
-
-O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto.
-Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. 
-Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo. */}
-
-      </Typography>
-      <CardActions>
-      <Button size="small">Marque sua aula experimental gratuita</Button>
-    </CardActions>
-    </CardContent>
-
-
-</Box>
-<CardMedia
-        component="img"
-        sx={{ width: 350 }}
-        image={padel}
-        alt="Live from space album cover"
-      />
-  </React.Fragment>
-);
 
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   const [openModal, setOpenModal] = React.useState(false);
+
+  const [openAboutModal, setOpenAboutModal] = React.useState(false);
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl2, setAnchorEl2] = React.useState<null | HTMLElement>(null);
+
   const open = Boolean(anchorEl);
+  const openAbout = Boolean(anchorEl2);
 
   const [modalInfo, setModalInfo] = React.useState({nome: '',  imgsource: '', description: ''})
 
+  function handleOpenAboutModal() {
+    setOpenAboutModal(true);
+
+  }
 
   function handleOpenModal(infoModal  : number) {
     console.log('info',infoModal)
@@ -155,6 +112,8 @@ const ResponsiveAppBar = () => {
   
   };
     const handleCloseModal = () => setOpenModal(false);
+    const handleCloseAboutModal = () => setOpenAboutModal(false);
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -165,12 +124,20 @@ const ResponsiveAppBar = () => {
   };
 
 
+  const handleClickAbout = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl2(event.currentTarget);
+  };
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
+    setAnchorEl2(null);
+
   };
+  
 
 
   return (
@@ -233,39 +200,42 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+           
             </Menu>
           </Box>
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
  
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-         
-{/* 
-              <Button
-                key={'quem-somos'}
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
+          <Button
+                key={'about'}
+                id="basic-button2"
+                aria-controls={openAbout ? 'basic-menu' : undefined}
                 aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
+                aria-expanded={openAbout ? 'true' : undefined}
+                onClick={handleClickAbout}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                
               >
-                Quem Somos
-              </Button> */}
-              {/* <Menu
+                Sobre nós
+              </Button>
+
+              <Menu
         id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
+        anchorEl={anchorEl2}
+        open={openAbout}
         onClose={handleClose}
         MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}>
-        <MenuItem onClick={handleClose}>Institucional</MenuItem>
-        </Menu> */}
+          'aria-labelledby': 'basic-button2',
+        }}
+       >
+        <MenuItem onClick={()=>{
+          handleOpenAboutModal()
+        }}>Institucional</MenuItem>
+         
+
+      </Menu>
+
+        
 
       <Button
                 key={'servicos'}
@@ -278,6 +248,7 @@ const ResponsiveAppBar = () => {
               >
                 Serviços
               </Button>
+
               <Menu
         id="basic-menu"
         anchorEl={anchorEl}
