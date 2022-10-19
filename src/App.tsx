@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import t4you from '../src/images/tenis4you_white.png'
-
+import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import padel from '../src/images/padel.png'
 import tenis from '../src/images/tenis.png'
 import proshop from '../src/images/proshop.png'
@@ -173,7 +173,7 @@ const ResponsiveAppBar = () => {
           </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
+          <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -202,6 +202,37 @@ const ResponsiveAppBar = () => {
             >
            
             </Menu>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              color="inherit"
+              onClick={() => {
+                handleOpenAboutModal()}
+              }
+            >
+              <PlayCircleFilledWhiteIcon />
+            </IconButton>
+            {/* <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+           
+            </Menu> */}
           </Box>
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
  
@@ -315,14 +346,7 @@ const ResponsiveAppBar = () => {
  🚧  Em breve vídeo Institucional 🚧 
  </Typography>
 
-<Typography    component="h2"
-  variant="h2"
-  fontSize={20}
-  align="center"
-  color="#text.primary"
-  gutterBottom>
-{modalInfo.description}
-</Typography>
+
 </Box>
 
 
