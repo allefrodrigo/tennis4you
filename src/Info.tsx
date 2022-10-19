@@ -352,11 +352,9 @@ Nossa equipa
         <AccordionDetails >
             
           {professor.description.map((desc:any)=>(
-            <List>
-            <ListItem>
+          
               <Typography > {desc}</Typography>
-            </ListItem>
-            </List>
+         
           ))}
             
         </AccordionDetails>
@@ -380,11 +378,9 @@ Nossa equipa
         <AccordionDetails >
             
           {professor.cursos.map((desc:any)=>(
-            <List>
-            <ListItem>
+          
               <Typography > {desc}</Typography>
-            </ListItem>
-            </List>
+           
           ))}
             
         </AccordionDetails>
