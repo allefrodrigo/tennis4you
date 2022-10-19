@@ -196,9 +196,7 @@ const ResponsiveAppBar = () => {
                 horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+             
             >
            
             </Menu>
@@ -374,23 +372,35 @@ const ResponsiveAppBar = () => {
         <Modal
         open={openModal}
         onClose={handleCloseModal}
+        sx={{
+          alignItems: 'center',
+          justifyContent: 'center',
+
+        }}
       >
 
         <div>
 
         <Box style={style}>
-      <Card sx={{ display: 'flex' }} variant="outlined">{
-    <React.Fragment>
-<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <React.Fragment>
 
-<CardContent sx={{   alignItems: 'center', justifyContent: 'center' }}>
-<Box>
+      <Card sx={{ display: 'flex' }} variant="outlined">
+<Box sx={{ display: 'flex', flexDirection: 'column' }} >
+
+<CardContent sx={{   alignItems: 'center', justifyContent: 'center' }} >
+<Box sx={{flex: 1, alignContent: 'center', justifyContent: 'center'}}>
 <Typography align="center"     component="h1"
   variant="h1"
-  fontSize={32}
   fontWeight={400}
   color="#1d1d1d"
-  gutterBottom>
+  sx={{
+    fontSize: {
+      lg: 30,
+      md: 20,
+      sm: 15,
+      xs: 10
+    }}}
+gutterBottom>
 Conheça o {modalInfo.nome}
 </Typography>
 
@@ -399,11 +409,18 @@ Conheça o {modalInfo.nome}
   fontSize={20}
   align="center"
   color="#text.primary"
+  sx={{
+    fontSize: {
+      lg: 20,
+      md: 20,
+      sm: 15,
+      xs: 10
+    }}}
   gutterBottom>
 {modalInfo.description}
 </Typography>
 </Box>
-<CardActions>
+<CardActions >
 <Button size="small">Marque sua aula experimental gratuita</Button>
 </CardActions>
 
@@ -417,14 +434,13 @@ Conheça o {modalInfo.nome}
    image={modalInfo.imgsource}
    alt="Live from space album cover"
  />
-</React.Fragment>
 
 
 
 
-      }
       
       </Card>
+</React.Fragment>
 
     </Box>
  
