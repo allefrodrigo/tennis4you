@@ -31,9 +31,10 @@ const style = {
   padding: 1,
   position: 'absolute' as 'absolute',
   top: '50%',
+  
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '70%',
+  width: '90%',
   height: 'auto',
   bgcolor: '#282828',
 };
@@ -147,7 +148,10 @@ const ResponsiveAppBar = () => {
         <Box
         component="img"
         sx={{
-          width: '5%',
+          width: { lg: "5%",
+            md: "5%",
+            sm: "10%",
+            xs: "15%"},
           padding: 1,
         }}
         alt="The house from the offer."
@@ -398,7 +402,7 @@ const ResponsiveAppBar = () => {
       lg: 30,
       md: 20,
       sm: 15,
-      xs: 10
+      xs: 15
     }}}
 gutterBottom>
 Conheça o {modalInfo.nome}
@@ -414,7 +418,7 @@ Conheça o {modalInfo.nome}
       lg: 20,
       md: 20,
       sm: 15,
-      xs: 10
+      xs: 11
     }}}
   gutterBottom>
 {modalInfo.description}
