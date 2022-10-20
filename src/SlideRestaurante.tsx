@@ -101,7 +101,7 @@ md={12}
 
 */}
       <Grid container >
-  <Grid xs={12} sm={8} md={8}>  
+  <Grid item xs={12} sm={8} md={8}>  
     <AliceCarousel
     disableDotsControls
         infinite 
@@ -114,7 +114,7 @@ md={12}
         
     />
   </Grid>
-  <Grid xs={12} sm={4} md={4}>
+  <Grid item xs={12} sm={4} md={4}>
     <Box style={{flex: 1, alignItems: 'center', textAlign: 'center', justifyContent: 'center'}}>
     <Typography     
     sx={{padding: 2}}
