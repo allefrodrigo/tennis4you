@@ -249,7 +249,7 @@ const ResponsiveAppBar = () => {
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 
               >
-                Sobre nós
+                Quem Somos
               </Button>
 
               <Menu
@@ -263,7 +263,7 @@ const ResponsiveAppBar = () => {
        >
         <MenuItem onClick={()=>{
           handleOpenAboutModal()
-        }}>Institucional</MenuItem>
+        }}>Sobre Nós</MenuItem>
          
 
       </Menu>
