@@ -121,7 +121,7 @@ const footers = [
   },
 ];
 
-function CallAbout() {
+function CallInfoTwo() {
   return (
     <React.Fragment>
       <CssBaseline />
@@ -152,5 +152,5 @@ alignItems="center"
   );
 }
 export default function InfoTwo() {
-  return <CallAbout />;
+  return <CallInfoTwo />;
 }

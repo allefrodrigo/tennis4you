@@ -44,7 +44,7 @@ const Section2 = styled.section`
 
 
 
-function CallAbout() {
+function CallFotos() {
   return (
     <React.Fragment>
   <Gallery photos={photos} />
@@ -52,5 +52,5 @@ function CallAbout() {
   );
 }
 export default function FotoTenisGalery() {
-  return <CallAbout />;
+  return <CallFotos />;
 }

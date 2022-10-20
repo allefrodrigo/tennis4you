@@ -93,7 +93,7 @@ const tiers = [
 ];
 
 
-function CallAbout() {
+function PartnersCall() {
   const openInNewTab = (url:any) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -198,5 +198,5 @@ function CallAbout() {
   );
 }
 export default function Partners() {
-  return <CallAbout />;
+  return <PartnersCall />;
 }

@@ -13,29 +13,15 @@ import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 
-const Section4 = styled.section`
-  background: #004E18;
-  width: 80%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
 
-const Section5 = styled.section`
-  background: #F5BB00;
-  height: 400px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+
 
 const EachSlide = styled.div`
   display: flex;
-  
+  object-fit: 'strech',
   justify-content: center;
   align-items: center;
+  width: '100%';
   height: 500px;
  
 

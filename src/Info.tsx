@@ -181,7 +181,7 @@ const style = {
 };
 
 
-function CallAbout() {
+function CallInfo() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -425,5 +425,5 @@ Nossa equipa
   );
 }
 export default function Info() {
-  return <CallAbout />;
+  return <CallInfo />;
 }

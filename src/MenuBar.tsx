@@ -92,7 +92,7 @@ const tiers = [
 ];
 
 
-function CallAbout() {
+function CallMenuBar() {
   return (
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
@@ -176,5 +176,5 @@ function CallAbout() {
   );
 }
 export default function Partners() {
-  return <CallAbout />;
+  return <CallMenuBar />;
 }
