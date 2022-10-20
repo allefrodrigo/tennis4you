@@ -22,6 +22,12 @@ import {  CardActionArea, List, ListItem, ListItemText,  } from '@mui/material'
 import Modal from '@mui/material/Modal';
 import ReactPlayer from 'react-player/lazy'
 
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 import joao from '../src/media/teachers/joao-galante-img.png'
 import jose from '../src/media/teachers/jose-galante-img.png'
 import pedro from '../src/media/teachers/pedro-ferreira-img.png'
@@ -170,10 +176,8 @@ const style = {
     sm: '80%',
     md: '80%',
     lg: '80%',
-    xl: '80%',
+    xl: '70%',
   },
-  height: 'auto',
-  bgcolor: '#090909',
 };
 
 
@@ -182,6 +186,17 @@ function CallAbout() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [professor, setProfessor] = React.useState({nome: '',  video: '', description: [''], cursos: ['']});
+
+  const [openDialog, setOpenDialog] = React.useState(false);
+
+  const handleClickOpenDialog = () => {
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+
   console.log(professor.description)
   return (
     <React.Fragment>
@@ -270,7 +285,7 @@ Nossa equipa
       description: tier.description,
       cursos: tier.cursos
     }))
-        setOpen(!open)
+        setOpenDialog(!open)
 
   }
   }  boxShadow={2} borderRadius={1} sx={{  minHeight: '60vh', backgroundImage: tier.image, backgroundSize: 'cover',   '&:hover': {
@@ -311,35 +326,35 @@ Nossa equipa
 
   
   </Grid>
+ {/* <Modal */}
+ <Box sx={style} >
 
-  <Modal
-        open={open}
-        onClose={handleClose}
+  <Dialog
+        open={openDialog}
+        onClose={handleCloseDialog}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        fullWidth
       >
-        <Box sx={style}>
+        <DialogTitle id="alert-dialog-title">
+
         <Typography id="modal-modal-title" 
                  component="h2"
                  variant="h2"
                  fontSize={30}
                  align="center"
-                 color="#FFFFFF"
+                 color="#000000"
                  gutterBottom>
             Conheça {professor.nome}
           </Typography>
+          </DialogTitle>
+          <DialogContent>
+
         <ReactPlayer width='100%' url={professor.video} />
 
-        
-          <Typography id="modal-modal-title" 
-                 component="h2"
-                 variant="h2"
-                 fontSize={20}
-                 align="center"
-                 color="#text.primary"
-                 gutterBottom>
+        <Box component="div" >
 
-<Accordion sx={{margin: 4 }}>
+<Accordion >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -349,7 +364,7 @@ Nossa equipa
             <Typography
           component="h2"
           variant="h2"
-          fontSize={20}
+          fontSize={18}
           align="center"
           color="#text.primary"
           gutterBottom
@@ -368,7 +383,7 @@ Nossa equipa
             
         </AccordionDetails>
       </Accordion>
-      <Accordion sx={{margin: 4}}>
+      <Accordion >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -378,7 +393,7 @@ Nossa equipa
             <Typography
           component="h2"
           variant="h2"
-          fontSize={20}
+          fontSize={18}
           align="center"
           color="#text.primary"
           gutterBottom
@@ -397,11 +412,13 @@ Nossa equipa
 
         </AccordionDetails>
       </Accordion>
-          </Typography>
-      
+          </Box>
+          </DialogContent>
 
-        </Box>
-      </Modal>
+
+      </Dialog>
+      </Box>
+
 </Container>
 </Section>
     </React.Fragment>
