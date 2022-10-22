@@ -138,7 +138,7 @@ function PartnersCall() {
         }}}
         alt="The house from the offer."
         src={dunlop}
-        onClick={() => openInNewTab('https://www.dunlop.eu/pt_pt/consumer.html')}
+        onClick={() => openInNewTab('https://dunlopsports.com/')}
 
       />
            <Box

@@ -22,7 +22,7 @@ const EachSlide = styled.div`
   justify-content: center;
   align-items: center;
   width: '100%';
-  height: 500px;
+  height: 400px;
  
 
 
@@ -62,44 +62,7 @@ const SlideRestaurante = () => {
 
 
 
-  {/* End hero unit */}
-{/*       
-<Grid container spacing={2}  >
-<Grid
-              item
-              xs={12}
-              md={4}
-            >
-              
-<EachSlide>
-    <AliceCarousel
-    disableDotsControls
-        infinite 
-        autoPlayInterval={3000} 
-        autoPlay
-        animationType="fadeout" 
-        animationDuration={800}
-        disableButtonsControls
-        items={items2}
-        mouseTracking
-    />
-    </EachSlide>
-    ads
-    </Grid>
-    <Grid
 
-item
-xs={8}
-md={12}
->
-10
-  </Grid>
-
-  
-</Grid>
-
-
-*/}
       <Grid container >
   <Grid item xs={12} sm={8} md={8}>  
     <AliceCarousel
