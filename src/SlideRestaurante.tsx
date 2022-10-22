@@ -18,11 +18,11 @@ import Box from '@mui/material/Box';
 
 const EachSlide = styled.div`
   display: flex;
-  object-fit: 'strech',
+  object-fit: 'contain',
   justify-content: center;
   align-items: center;
   width: '100%';
-  height: 400px;
+  height: 300px;
  
 
 
