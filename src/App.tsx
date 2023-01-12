@@ -43,12 +43,12 @@ const tier = [
   {
     title: 'Padel',
     image: `url(${padel})`,
-    desc: 'Gostaria de aprender o desporto com maior crescimento em Portugal? A nossa equipa proporciona-lhe uma progressão surpreendente! O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto. Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.'
+    desc: 'Gostava de aprender o desporto com maior crescimento em portugal? A nossa equipa proporciona-lhe uma experiência única! O nosso método de ensino irá otimizar e potenciar toda a sua componente técnica e táctica. Eleve o  seu nível de jogo num dos desportos de topo do ranking de sucesso imediato.'
   },
   {
     title: 'Tenis',
     image: `url(${tenis})`,
-    desc: 'Gostaria de aprender este desporto apaixonante? Ténis4You ensino de excelência! A nossa metodologia foi concebida por uma equipa de profissionais qualificados e com uma vasta experiencia nos diferentes níveis de ténis. Não precisa de qualquer experiencia previa. A nossa equipa criou a combinação perfeita na simplicidade no ensino de forma a acelerar resultados sem queimar etapas para todas as idades e géneros. Para que aprenda depressa e ao seu ritmo com a garantia de um nível de evolução máxima. Garantimos resultados imediatos! Marque já a sua aula experimental Gratuita!'
+    desc: 'Gostava de aprender este desporto apaixonante? Na ténis4you o ensino é de excelência! A nossa metodologia foi concebida por profissionais altamente qualificados e com uma vasta experiência nos diferentes níveis de aprendizagem. Não é necessário já ter jogado, pois temos a combinação perfeita entre a simplicidade no ensino, resultados imediatos em todas as idades, sem queimar etapas! Aprenda ao seu ritmo, sempre com a garantia de evolução máxima. '
   },
   {
     title: 'Pro Shop',
@@ -95,12 +95,12 @@ const ResponsiveAppBar = () => {
 
     if (infoModal == 1) {
       console.log('Tenis')
-      setModalInfo({nome: 'Tenis', imgsource: tenis, description: 'Gostaria de aprender este desporto apaixonante? Ténis4You ensino de excelência! A nossa metodologia foi concebida por uma equipa de profissionais qualificados e com uma vasta experiencia nos diferentes níveis de ténis. Não precisa de qualquer experiencia previa. A nossa equipa criou a combinação perfeita na simplicidade no ensino de forma a acelerar resultados sem queimar etapas para todas as idades e géneros. Para que aprenda depressa e ao seu ritmo com a garantia de um nível de evolução máxima. Garantimos resultados imediatos! Marque já a sua aula experimental Gratuita!'})
+      setModalInfo({nome: 'Ténis', imgsource: tenis, description: 'Gostava de aprender este desporto apaixonante? Na ténis4you o ensino é de excelência! A nossa metodologia foi concebida por profissionais altamente qualificados e com uma vasta experiência nos diferentes níveis de aprendizagem. Não é necessário já ter jogado, pois temos a combinação perfeita entre a simplicidade no ensino, resultados imediatos em todas as idades, sem queimar etapas! Aprenda ao seu ritmo, sempre com a garantia de evolução máxima.'})
 
     } else if (infoModal == 2) {
-      setModalInfo({nome: 'Padel', imgsource: padel, description: 'Gostaria de aprender o desporto com maior crescimento em Portugal? A nossa equipa proporciona-lhe uma progressão surpreendente! O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto. Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.'})
+      setModalInfo({nome: 'Padel', imgsource: padel, description: 'Gostava de aprender o desporto com maior crescimento em portugal? A nossa equipa proporciona-lhe uma experiência única! O nosso método de ensino irá otimizar e potenciar toda a sua componente técnica e táctica. Eleve o  seu nível de jogo num dos desportos de topo do ranking de sucesso imediato.'})
     } else if (infoModal == 3) {
-      setModalInfo({nome: 'Pro Shop', imgsource: proshop, description: 'Gostaria de aprender o desporto com maior crescimento em Portugal? A nossa equipa proporciona-lhe uma progressão surpreendente! O nosso método de ensino irá otimizar e potenciar todos os aspetos técnicos e táticos deste desporto. Eleve o seu nível de jogo num dos desportos de topo do ranking de sucesso imediato. Contribuímos para desfrutar o máximo deste maravilhoso desporto de grande componente social, divertido e competitivo.'})
+      setModalInfo({nome: 'Pro Shop', imgsource: proshop, description: 'Neste espaço temos todo o tipo de material desportivo ligado às modalidades de ténis e padel, bem como todo o aconselhamento técnico de material para o mais alto nível de rendimento, numa vertente mais social, de lazer, ou competitiva.'})
     } else if (infoModal == 4){
       setModalInfo({nome: 'Eventos', imgsource: eventos, description: 'Na Ténis4You temos espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares'})
     } else if (infoModal == 5){
@@ -435,12 +435,7 @@ Conheça o {modalInfo.nome}
 
 
 </Box>
-   <CardMedia
-   component="img"
-   sx={{ width: 350 }}
-   image={modalInfo.imgsource}
-   alt="Live from space album cover"
- />
+ 
 
 
 
