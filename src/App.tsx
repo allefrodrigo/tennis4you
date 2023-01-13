@@ -17,6 +17,10 @@ import proshop from '../src/images/proshop.png'
 import eventos from '../src/images/eventos.png'
 import aluguel from '../src/images/aluguel.png'
 
+import ReactPlayer from 'react-player/lazy'
+import Tennis4YouVideo from "../src/media/tennis4you-final.mp4";
+
+
 import Modal from '@mui/material/Modal';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -345,10 +349,11 @@ const ResponsiveAppBar = () => {
   fontWeight={400}
   color="#1d1d1d"
   gutterBottom>
- 🚧  Em breve vídeo Institucional 🚧 
+    
+  Sobre nós  
  </Typography>
 
-
+ <ReactPlayer width='70%' height='80%' url={Tennis4YouVideo} playing={true}/>
 </Box>
 
 
