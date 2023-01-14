@@ -429,10 +429,10 @@ Conheça o {modalInfo.nome}
 {modalInfo.description}
 </Typography>
 </Box>
-<a style={{textDecoration: 'none', color: 'inherit' }} href={'https://api.whatsapp.com/send?phone=351968804083&text=Ol%C3%A1%2C%20vim%20do%20s%C3%ADtio%20de%20internet%20%3Cmensagem%20customizada%3E'}>
+<a style={{textDecoration: 'none', color: 'inherit' }} href={`https://api.whatsapp.com/send?phone=351968804083&text=Ol%C3%A1,%20vim%20atrav%C3%A9s%20do%20s%C3%ADtio%20de%20internet%20e%20quero%20saber%20sobra%20as%20aulas%20de%20`+`${modalInfo.nome}`}>
 
-<CardActions >
-<Button size="small">Marque sua aula experimental gratuita</Button>
+<CardActions sx={{ justifyContent: 'center' }}>
+{ modalInfo.nome === 'Padel' ? (<Button size="small">Marque já a sua aula experimental</Button>) : modalInfo.nome==='Ténis' ? (<Button size="small">Marque já a sua aula experimental gratuita</Button>) : (<></>) }
 </CardActions>
 </a>
 
