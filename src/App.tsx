@@ -16,7 +16,8 @@ import tenis from '../src/images/tenis.png'
 import proshop from '../src/images/proshop.png'
 import eventos from '../src/images/eventos.png'
 import aluguel from '../src/images/aluguel.png'
-
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 import ReactPlayer from 'react-player/lazy'
 import Tennis4YouVideo from "../src/media/tennis4you-final.mp4";
 
@@ -99,14 +100,13 @@ const ResponsiveAppBar = () => {
 
     if (infoModal == 1) {
       console.log('Tenis')
-      setModalInfo({nome: 'Ténis', imgsource: tenis, description: 'Gostava de aprender este desporto apaixonante? Na ténis4you o ensino é de excelência! A nossa metodologia foi concebida por profissionais altamente qualificados e com uma vasta experiência nos diferentes níveis de aprendizagem. Não é necessário já ter jogado, pois temos a combinação perfeita entre a simplicidade no ensino, resultados imediatos em todas as idades, sem queimar etapas! Aprenda ao seu ritmo, sempre com a garantia de evolução máxima.'})
-
+      setModalInfo({nome: 'Ténis', imgsource: tenis, description:`Gostava de aprender este desporto apaixonante? Na ténis4you o ensino é de excelência! A nossa metodologia foi concebida por profissionais altamente qualificados e com uma vasta experiência nos diferentes níveis de aprendizagem. Não é necessário já ter jogado, pois temos a combinação perfeita entre a simplicidade no ensino, resultados imediatos em todas as idades, sem queimar etapas! Aprenda ao seu ritmo, sempre com a garantia de evolução máxima. `})
     } else if (infoModal == 2) {
       setModalInfo({nome: 'Padel', imgsource: padel, description: 'Gostava de aprender o desporto com maior crescimento em portugal? A nossa equipa proporciona-lhe uma experiência única! O nosso método de ensino irá otimizar e potenciar toda a sua componente técnica e táctica. Eleve o  seu nível de jogo num dos desportos de topo do ranking de sucesso imediato.'})
     } else if (infoModal == 3) {
       setModalInfo({nome: 'Pro Shop', imgsource: proshop, description: 'Neste espaço temos todo o tipo de material desportivo ligado às modalidades de ténis e padel, bem como todo o aconselhamento técnico de material para o mais alto nível de rendimento, numa vertente mais social, de lazer, ou competitiva.'})
     } else if (infoModal == 4){
-      setModalInfo({nome: 'Eventos', imgsource: eventos, description: 'Na Ténis4You temos espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares'})
+      setModalInfo({nome: 'Eventos', imgsource: eventos, description: 'Nesta área dispomos de um sem número de opções:'})
     } else if (infoModal == 5){
       setModalInfo({nome: 'Aluguel', imgsource: aluguel, description: 'Aluguer de espaços para as festas de aniversários, organização de ligas, torneios e clínicas desportivas para as jovens nas suas férias escolares'}) 
     } else {
@@ -342,7 +342,7 @@ const ResponsiveAppBar = () => {
 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
 
 <CardContent sx={{   alignItems: 'center', justifyContent: 'center' }}>
-<Box >
+<Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 <Typography align="center"     component="h1"
   variant="h1"
   fontSize={32}
@@ -352,7 +352,6 @@ const ResponsiveAppBar = () => {
     
   Sobre nós  
  </Typography>
-
  <ReactPlayer width='70%' height='80%' url={Tennis4YouVideo} playing={true}/>
 </Box>
 
@@ -427,6 +426,43 @@ Conheça o {modalInfo.nome}
     }}}
   gutterBottom>
 {modalInfo.description}
+<br />
+
+<br />
+{modalInfo.nome === 'Ténis' ? (<Stack direction="row" spacing={1}>
+      <Chip label="Grupo de 2 pessoas" />
+      <Chip label="Grupo de 3 pessoas" />
+      <Chip label="Grupo de 4 pessoas" />
+      <Chip label="Grupo juvenil" />
+      <Chip label="Aulas de ténis individuais" />
+      <Chip label="Aulas individuais em regime mensal" />
+      <Chip label="Aulas individuais por cartao" />
+    </Stack>) : modalInfo.nome === 'Padel' ? (
+      <Stack direction={"row"} spacing={1}>
+  <Chip label="Grupo de 2 pessoas" />
+  <Chip label="Grupo de 3 pessoas" />
+  <Chip label="Grupo de 4 pessoas" />
+  <Chip label="Grupo juvenil" />
+  <Chip label="Aulas de ténis individuais" />
+  <Chip label="Aulas individuais em regime mensal" />
+  <Chip label="Aulas individuais por cartao" />
+</Stack>
+    ) : (modalInfo.nome === 'Eventos' ? (<Stack direction={"row"} spacing={1}>
+
+
+    <Chip label="TORNEIO ESCADA T4Y" />
+    <Chip label="TORNEIOS SOCIAIS DE TÉNIS POR ESCALÃO ETÁRIO" />
+    <Chip label="WORKSHOPS TEMÁTICOS" />
+    <Chip label="TORNEIOS INDIVIDUAIS" />
+    <Chip label="TORNEIOS DE PARES" /> <br />
+    <Chip label="TEAM BUILDING" />
+    <Chip label="FÉRIAS DESPORTIVAS" />
+    <Chip label="AULAS EM CASA OU CONDOMÍNIOS SEM SAIR DE CASA" />
+    <Chip label="FESTAS DE ANIVERSÁRIO" />
+ 
+ 
+  </Stack>) : (<> </>))}
+
 </Typography>
 </Box>
 <a style={{textDecoration: 'none', color: 'inherit' }} href={`https://api.whatsapp.com/send?phone=351968804083&text=Ol%C3%A1,%20vim%20atrav%C3%A9s%20do%20s%C3%ADtio%20de%20internet%20e%20quero%20saber%20sobra%20as%20aulas%20de%20`+`${modalInfo.nome}`}>
